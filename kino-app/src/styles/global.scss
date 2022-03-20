@@ -1,0 +1,48 @@
+@import "./toremConverter.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 25rem;
+      gap: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .d-center {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      width: 100%;
+      .btn{
+        .btn_1{
+          padding: toRem(8) toRem(10);
+          border: none;
+          border-radius: toRem(5) 0 0 toRem(5) ;
+          color: #fff;
+          background-color: #000;
+          &:hover{
+            background-color: #fff;
+            color: #000;
+          }
+        }
+         .btn_2{
+          padding: toRem(8) toRem(10);
+          border: none;
+          border-radius:0 toRem(5)  toRem(5) 0;
+          color: #fff;
+          background-color: #000;
+          &:hover{
+            background-color: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+}

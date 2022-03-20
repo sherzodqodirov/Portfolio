@@ -1,0 +1,14 @@
+.form input {
+  padding: 0.5rem 0.625rem;
+  border: none;
+  border-radius: 0.3125rem 0 0 0.3125rem;
+}
+
+.form button {
+  padding: 0.5rem 0.625rem;
+  border: none;
+  border-radius: 0 0.3125rem 0.3125rem 0;
+  color: #fff;
+  background-color: #000;
+}
+/*# sourceMappingURL=Search.module.css.map */

@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+body .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 25rem;
+  gap: 1rem;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .d-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+body .d-center .btn .btn_1 {
+  padding: 0.5rem 0.625rem;
+  border: none;
+  border-radius: 0.3125rem 0 0 0.3125rem;
+  color: #fff;
+  background-color: #000;
+}
+
+body .d-center .btn .btn_1:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+body .d-center .btn .btn_2 {
+  padding: 0.5rem 0.625rem;
+  border: none;
+  border-radius: 0 0.3125rem 0.3125rem 0;
+  color: #fff;
+  background-color: #000;
+}
+
+body .d-center .btn .btn_2:hover {
+  background-color: #fff;
+  color: #000;
+}
+/*# sourceMappingURL=global.css.map */

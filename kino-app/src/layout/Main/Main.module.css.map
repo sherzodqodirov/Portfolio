@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,KAAK,CAAA;EACD,OAAO,ECDI,QAAmB,CAAnB,SAAmB;EDE9B,gBAAgB,EAAE,OAAkB;CAEvC",
+    "sources": [
+        "Main.module.scss",
+        "../../styles/toremConverter.scss"
+    ],
+    "names": [],
+    "file": "Main.module.css"
+}

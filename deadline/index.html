@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deadline</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootsrap/bootstrap.min.css">
+</head>
+
+<body class="bg-secondary">
+    <div class="cardla">
+        <div class="card">
+            <div class="card-header">
+                <b>Yangi</b>
+            </div>
+            <div class="card-body">
+                <form class="card_body" name="addForm">
+                    <input type="text" id="name" placeholder="Employee" name="staff">
+                    <textarea id="comment" cols="30" rows="5" placeholder="Tavsif..."></textarea>
+                    <input type="date" id="date" placeholder="dd-mm-yyyy">
+                    <br>
+                    <button type="button" class="btn btn-secondary bajarishbtn" id="add">Bajarish</button>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <b>Jarayon </b>
+            </div>
+            <div class="card-body">
+                <div  id="process"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <b>Bajarilgan</b>
+            </div>
+            <div class="card-body">
+                <div  id="done"></div>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <b>Kechikan</b>
+            </div>
+            <div class="card-body">
+                <div  id="missed"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./bootsrap/bootstrap.bundle.min.js"></script>
+<script src="./app.js"></script>
+
+</html>

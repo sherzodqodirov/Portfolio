@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 100px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn{
+    padding: 0.5rem 1rem;
+   
+}
+.btn-dark{
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-dark:hover{
+    background-color: #ffff;
+    color: #000;
+}
+.btn-success{
+    background-color: #008000;
+    color: #fff;
+    cursor: pointer;
+    
+}
+.btn-success:hover{
+    background-color: #02bb02;
+    
+}
+
+.btn-sold{
+    background-color: #ffff;
+    color: #000;
+    cursor: not-allowed;
+    border: 1px solid #000;
+}

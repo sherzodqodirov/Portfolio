@@ -1,0 +1,45 @@
+*{
+    font-size: 20px;
+}
+
+.cardla{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 300px;
+    border-radius: 70px;
+    box-shadow: 4px 10px 5px 5px;
+    height: 500px;
+
+}
+#comment{
+    margin:20px 0 20px 0;
+    border-radius: 5px;
+    width: 250px;
+    
+}
+#date{
+    margin-bottom: 20px;
+    width: 200px;
+    height: 40px;
+}
+#name{
+    width: 200px;
+}
+ul{
+    border-bottom: 1px solid black;
+}
+li{
+    list-style: none;
+}
+.card-body{
+    overflow: auto;
+}
+h5{
+    color: red;
+}
+p{
+    color: rgb(119, 119, 119);
+}

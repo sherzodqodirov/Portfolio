@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,SADO,CACP,EAAE,CAAC;EACD,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,KAAK,EAAE,OAAO;CACf",
+    "sources": [
+        "WorksPage.scss"
+    ],
+    "names": [],
+    "file": "WorksPage.css"
+}

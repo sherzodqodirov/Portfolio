@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AACI,KADC,CACD,KAAK,CAAA;EACD,OAAO,ECHA,MAAmB,CAAnB,QAAmB;EDI1B,MAAM,EAAE,IAAI;EACZ,aAAa,ECLN,SAAmB,CDKF,CAAC,CAAC,CAAC,CCLpB,SAAmB;CDO7B;;AANL,AAOI,KAPC,CAOD,MAAM,CAAA;EACF,OAAO,ECTA,MAAmB,CAAnB,QAAmB;EDU1B,MAAM,EAAE,IAAI;EACZ,aAAa,EAAC,CAAC,CCXR,SAAmB,CAAnB,SAAmB,CDWS,CAAC;EACpC,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,IAAI;CACzB",
+    "sources": [
+        "Search.module.scss",
+        "../../styles/toremConverter.scss"
+    ],
+    "names": [],
+    "file": "Search.module.css"
+}

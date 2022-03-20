@@ -1,0 +1,12 @@
+form{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+input{
+    padding: 0.4rem 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+}

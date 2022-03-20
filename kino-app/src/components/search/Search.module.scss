@@ -1,0 +1,17 @@
+@import "../../styles/toremConverter.scss";
+
+.form{
+    input{
+        padding: toRem(8) toRem(10);
+        border: none;
+        border-radius: toRem(5) 0 0 toRem(5);
+     
+    }
+    button{
+        padding: toRem(8) toRem(10);
+        border: none;
+        border-radius:0 toRem(5)  toRem(5) 0;
+        color: #fff;
+        background-color: #000;
+    }
+}

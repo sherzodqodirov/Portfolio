@@ -1,0 +1,32 @@
+@font-face {
+  font-family: Heebo-Medium;
+  src: url(../fonts/Heebo-Medium.ttf);
+}
+
+.navbar {
+  background-color: white !important;
+}
+
+.navbar ul {
+  padding: 0 35px 0 0;
+}
+
+.navbar ul li a {
+  font-family: Heebo-Medium;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+@media only screen and (max-width: 991px) {
+  nav {
+    padding-top: 0 !important;
+    position: fixed !important;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+  }
+}
+/*# sourceMappingURL=menu.css.map */

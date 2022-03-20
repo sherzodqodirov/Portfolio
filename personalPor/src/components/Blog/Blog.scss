@@ -1,0 +1,62 @@
+@font-face {
+  font-family: Heebo-Medium;
+  src: url(../fonts/Heebo-Medium.ttf);
+}
+@font-face {
+  font-family: Heebo-Bold;
+  src: url(../fonts/Heebo-Bold.ttf);
+}
+@font-face {
+  font-family: Heebo-Regular;
+  src: url(../fonts/Heebo-Regular.ttf);
+}
+
+.about {
+  h1 {
+    margin-top: 106px;
+    margin-bottom: 55px;
+    font-family: Heebo-Bold;
+    font-size: 44px;
+    line-height: 60px;
+    color: #21243d;
+  }
+  .skills {
+    margin-top: 20px;
+    h2 {
+      font-family: Heebo-Medium;
+      font-size: 30px;
+      line-height: 44px;
+      color: #21243d;
+    }
+    h4 {
+      font-family: Heebo-Regular;
+      font-size: 20px !important;
+      line-height: 29px;
+      color: #21243d;
+      span {
+        margin: 0 20px;
+      }
+      .sp {
+        font-family: Heebo-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 29px;
+        color: #8695a4;
+      }
+    }
+    p {
+      font-family: Heebo-Regular;
+      font-size: 16px;
+      line-height: 23px;
+      color: #21243d;
+      padding-right: 430px;
+    }
+  }
+}
+
+@media only screen and(max-width:991px) {
+  p {
+    padding-right: 0 !important;
+  }
+}

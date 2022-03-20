@@ -1,0 +1,128 @@
+@font-face {
+    font-family: Heebo-Regular;
+    src: url(../fonts/Heebo-Regular.ttf);
+  }
+  @font-face {
+    font-family: Heebo-Bold;
+    src: url(../fonts/Heebo-Bold.ttf);
+  }
+
+  .posts {
+    background: #edf7fa;
+    padding-bottom: 32px;
+    .container {
+      .recentview {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h5 {
+          font-family: Heebo-Regular;
+          font-size: 22px;
+          line-height: 60px;
+          color: #21243d;
+        }
+        a {
+          font-family: Heebo;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 23px;
+          text-decoration: none;
+          color: #00a8cc;
+        }
+      }
+      .cardla {
+       
+        .card {
+          width: 450px;
+          margin-top: 2rem  ;
+          background: #ffffff;
+          box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
+          border-radius: 4px;
+          border: none;
+         
+          .card-body {
+            h1 {
+              margin-bottom: 0;
+              font-family: Heebo-Bold;
+              font-weight: bold;
+              font-size: 26px;
+              line-height: 38px;
+              color: #21243d;
+            }
+            h5 {
+              margin-top: 17px;
+              font-family: Heebo-Regular;
+              font-weight: normal;
+              font-size: 18px;
+              line-height: 26px;
+              color: #21243d;
+              margin-bottom: 0;
+              span {
+                margin: 0 26px;
+              }
+            }
+            p {
+              margin-top: 11px;
+              font-family: Heebo-Regular;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 23px;
+              color: #21243d;
+            }
+          }
+        }
+      
+        }
+      }
+     
+    }
+  
+  
+  @media only screen and(max-width:991px) {
+    .posts {
+      
+      .container {
+        .recentview {
+          display: flex;
+          justify-content: center;
+          h5 {
+            line-height: 60px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+          a {
+           display: none;
+          }
+        }
+        .cardla {
+         
+          .card {
+            width: 354px;
+            margin-top: 1rem  ;
+            .card-body {
+              h1 {             
+                font-size: 22px;
+                line-height: 30px;
+              }
+              h5 {
+                font-size: 16px;
+                line-height: 23px;
+                span {
+                  margin: 0 24px;
+                }
+              }
+            }
+          }
+          &:nth-child(odd) {
+            .card{
+              margin-left: 0;
+            }
+          }
+        }
+       
+      }
+    }
+    
+  }
+  
