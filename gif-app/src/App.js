@@ -9,7 +9,6 @@ const initonData = [];
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH":
-      console.log(action.value.data);
       return action.value.data;
     default:
       return state;
