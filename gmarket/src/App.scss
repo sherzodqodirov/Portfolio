@@ -1,0 +1,764 @@
+//  Fonts
+@font-face {
+  font-family: Iner-Regular;
+  src: url(./Fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Iner-Medium;
+  src: url(./Fonts/Inter-Medium.ttf);
+}
+
+@font-face {
+  font-family: Iner-Bold;
+  src: url(./Fonts/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: Iner-SemiBold;
+  src: url(./Fonts/Inter-SemiBold.ttf);
+}
+
+// color
+$colorblack: #000000;
+$colorwhite: #ffffff;
+
+// icons
+
+.icon1 {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  mask-repeat: no-repeat;
+  mask-size: contain !important;
+  mask-position: center;
+  vertical-align: middle;
+
+  &.icon-setting {
+    background-color: #2E3456;
+    mask-image: url(./icons/setting.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  &.icon-staricon {
+    background: #FFB800;
+    mask-image: url(./icons/staricon.svg);
+
+    &:hover {
+      transition: 0.5s;
+      transform: scale(1.5);
+    }
+  }
+
+  &.icon-arrowlefticon {
+    background-color: #2E3456;
+    mask-image: url(./icons/arrowlefticon.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  &.icon-bell {
+    background-color: #2E3456;
+    mask-image: url(./icons/bell.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+
+}
+
+.icon2 {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  mask-repeat: no-repeat;
+  mask-size: contain !important;
+  mask-position: center;
+  vertical-align: middle;
+
+  &.icon-share {
+    mask-image: url(./icons/shareicon.svg);
+    background-color: #F26110;
+
+    &:hover {
+      background-color: #f22a10;
+    }
+  }
+
+  &.icon-infoicon {
+    margin-right: 12px;
+    mask-image: url(./icons/infoicon.svg);
+    background-color: $colorblack;
+
+    &:hover {
+      background-color: silver;
+    }
+  }
+
+  &.icon-caricon {
+    margin-right: 12px;
+    mask-image: url(./icons/caricon.svg);
+    background-color: $colorblack;
+
+    &:hover {
+      background-color: silver;
+    }
+  }
+
+  &.icon-savedicon {
+    margin-right: 12px;
+    mask-image: url(./icons/savedicon.svg);
+    background-color: $colorblack;
+
+    &:hover {
+      background-color: silver;
+    }
+  }
+
+  &.icon-producticon {
+    mask-image: url(./icons/prodicon.svg);
+    background-color: $colorwhite;
+
+    &:hover {
+      background-color: #c0c0c0;
+    }
+  }
+
+  &.icon-timeicon {
+    mask-image: url(./icons/timicon.svg);
+    background-color: #F26110;
+
+    &:hover {
+      background-color: #f22a10;
+    }
+  }
+
+  &.icon-loopicon {
+    margin-right: 17px;
+    mask-image: url(./icons/loopicon.svg);
+    background-color: #2E3456;
+
+    &:hover {
+      background-color: $colorblack;
+    }
+  }
+
+  &.icon-inputseticon {
+    margin-left: 20px;
+    mask-image: url(./icons/inputseticon.svg);
+    background-color: #2E3456;
+
+    &:hover {
+      background-color: $colorblack;
+    }
+  }
+
+  &.icon-maplocicon {
+    margin-right: 13px;
+    mask-image: url(./icons/maplocicon.svg);
+    background-color: #2E3456;
+
+    &:hover {
+      background-color: $colorblack;
+    }
+  }
+
+  &.icon-downicon {
+    margin-left: 27px;
+    mask-image: url(./icons/donwicon.svg);
+    background-color: #2E3456;
+
+    &:hover {
+      background-color: $colorblack;
+    }
+  }
+
+}
+
+.icon3 {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  mask-repeat: no-repeat;
+  mask-size: contain !important;
+  mask-position: center;
+  vertical-align: middle;
+  margin-right: 25px;
+
+  &.icon-stores {
+    background-color: #16AA16;
+    mask-image: url(./icons/store.svg);
+
+    &:hover {
+      background-color: #7dff7d;
+    }
+  }
+
+  &.icon-orderhst {
+    background-color: #2E3456;
+    mask-image: url(./icons/orderhist.svg);
+
+    &:hover {
+      background-color: #0000ff;
+    }
+  }
+
+  &.icon-savedst {
+    background-color: rgba(46, 52, 86, 0.32);
+    mask-image: url(./icons/savedsticon.svg);
+
+    &:hover {
+      background-color: #0000ff;
+    }
+  }
+
+  &.icon-likeicon {
+    background-color: #2E3456;
+    mask-image: url(./icons/likeicon.svg);
+
+    &:hover {
+      background-color: #ff0000;
+    }
+  }
+
+  &.icon-viwedicon {
+    background-color: #2E3456;
+    mask-image: url(./icons/viwedIcon.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  &.icon-wallet {
+    background-color: #2E3456;
+    mask-image: url(./icons/wallet.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  &.icon-profsetting {
+    background-color: #2E3456;
+    mask-image: url(./icons/profsett.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  &.icon-helpcent {
+    background-color: #2E3456;
+    mask-image: url(./icons/helpcent.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  &.icon-outicon {
+    background-color: #2E3456;
+    mask-image: url(./icons/outicon.svg);
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 15px;
+  font-family: Iner-Medium;
+  background: #E5E5E5;
+}
+
+// buttonlar
+
+.btnGM {
+  padding: 20px 107px 20px 20px;
+  background: $colorwhite;
+  box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+  border-radius: 10px;
+  font-family: Iner-SemiBold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -1px;
+  color: #2E3456;
+
+  .GMbtnicon {
+    margin-right: 24px;
+  }
+}
+
+.btnBack {
+  padding: 18px;
+  box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+  border-radius: 10px;
+  background-color: $colorwhite;
+  margin-left: 24px;
+}
+
+.btndown {
+  padding: 20px;
+  margin-left: 10px;
+  background: $colorwhite;
+  box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  color: #2E3456;
+}
+
+.searchBtn {
+  margin-left: 10px;
+  padding: 20px;
+  background: $colorwhite;
+  box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+  border-radius: 10px;
+
+  #searchavl {
+    background: $colorwhite;
+    border: none;
+    border-right: 1px solid rgba(46, 52, 86, 0.3);
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: #2E3456;
+  }
+}
+
+.priceproduct {
+  margin-left: 10px;
+  padding: 8px 18px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+  border-radius: 10px;
+
+  .aylprod {
+    border-radius: 100px;
+    padding: 10px;
+    background-color: #16AA16;
+  }
+
+  h6 {
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: #2E3456;
+  }
+}
+
+.btncard{
+  background: #E4F9FF;
+  border-radius: 16px;
+   margin-bottom: 20px;
+}
+// Profil
+.corebox {
+  display: flex;
+
+  .profilbox {
+    margin-right: 24px;
+  }
+}
+
+.btnModal {
+  margin-left: 10px;
+  padding: 10px;
+  background: $colorwhite;
+  box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+  border-radius: 10px;
+
+  .timebox {
+    padding: 10px 20px;
+    background: rgba(242, 97, 16, 0.07);
+    border-radius: 50px;
+
+    h6 {
+      margin-left: 12px;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 0;
+      letter-spacing: -0.02em;
+      color: #F26110;
+    }
+  }
+}
+
+.Profilmenu {
+  width: 250px;
+  margin-top: 8px;
+  padding: 37px 32px 32px 32px;
+  background: $colorwhite;
+  box-shadow: 2px 0 2px rgba(223, 226, 235, 0.79);
+  border-radius: 10px;
+
+  .profilimg {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .FISH {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    line-height: 116.3%;
+    letter-spacing: -0.01em;
+    color: $colorblack;
+
+    span {
+      font-family: Iner-Regular;
+      font-size: 14px;
+    }
+  }
+
+  .balance {
+    padding: 19px 20px;
+    background: rgba(192, 194, 204, 0.07);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    .numbalance {
+      h5 {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.4px;
+        color: $colorblack;
+      }
+
+      h4 {
+        font-family: Iner-Bold;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.4px;
+        color: $colorblack;
+      }
+    }
+
+    .addbalance {
+      .circle {
+        padding-bottom: 2px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        background-color: #16AA16;
+        color: $colorwhite;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.35);
+          background-color: rgba(22, 170, 22, 0.69);
+          padding-bottom: 3px;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+
+  .sharebtn {
+    margin-top: 3px;
+    padding: 12px 34px;
+    border-radius: 10px;
+
+    span {
+      margin-right: 13.86px;
+    }
+
+    h5 {
+      font-size: 14px;
+      line-height: 116.3%;
+      letter-spacing: -0.01em;
+      color: #F26110;
+      margin-bottom: 0;
+    }
+  }
+
+  .profilnav {
+    margin-top: 42px;
+
+    .nav-link {
+      padding: 32px 0 0 0;
+      font-size: 14px;
+      line-height: 116.3%;
+      letter-spacing: -0.01em;
+      color: $colorblack;
+      opacity: 0.5;
+    }
+
+    .navitem {
+      margin-top: 54px;
+    }
+
+    .navlink {
+      padding: 16px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    .active {
+      opacity: 1;
+    }
+  }
+}
+
+// Modal
+
+.offcanvas {
+  h5 {
+    margin-top: 30px;
+  }
+}
+
+//calendar
+.react-calendar {
+  border: none !important;
+}
+
+.calendHelp {
+  margin-top: 6px;
+  padding: 16px 16px 15px 20px;
+  background: #F8F8F8;
+  border-radius: 10px;
+
+  h6 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: $colorblack;
+
+    span {
+      margin-left: 30px;
+    }
+  }
+
+  img {
+    margin-right: 8px;
+  }
+}
+
+//core product
+
+.aplesin-header {
+  margin-top: 10px;
+  display: flex;
+  height: 300px;
+
+  .card1 {
+    margin-right: 10px;
+    overflow: hidden;
+    background: #E5E5E5;
+    border: 1px solid rgba(46, 52, 86, 0.15);
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    .imgcard {
+      width: 966px;
+      height: 200px;
+    }
+
+    .card-text {
+      padding: 43px 26px 26px 22px;
+
+      h1 {
+        font-size: 28px;
+        line-height: 16px;
+        letter-spacing: -0.02em;
+        color: $colorblack;
+      }
+
+      h6 {
+        margin-bottom: 0;
+        margin-left: 24px;
+        font-size: 14px;
+        line-height: 116.3%;
+        letter-spacing: -0.01em;
+        color: $colorblack;
+
+        .delicon {
+          margin-right: 24px;
+          width: 7px;
+          height: 7px;
+          border-radius: 100%;
+          background-color: #D0D3DB;
+
+        }
+      }
+
+      h5 {
+        margin-left: 160px;
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 116.3%;
+        letter-spacing: -0.4px;
+        color: $colorblack;
+      }
+    }
+  }
+
+  .card2 {
+    padding: 10px;
+    background: $colorwhite;
+    box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+    border-radius: 10px;
+
+    .card-mini {
+      padding: 35px 39px;
+      background: #2E3456;
+      border-radius: 10px;
+    }
+  }
+}
+
+//carudel
+
+.Swipercarusel{
+  margin-top: 20px;
+  width: 1119px;
+  .cardproduct{
+    border: none;
+    overflow: hidden;
+    width: 250px;
+    height: 170px;
+    padding: 24px 0 0 24px;
+    border-radius: 10px;
+    .cardtext{
+      h3{
+        font-family:Iner-Bold;
+        font-size: 22px;
+        line-height: 116.3%;
+        letter-spacing: -0.01em;
+        color: #E4F9FF;
+      }
+      p{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: -0.01em;
+        color: #EFEBFF;
+      }
+
+    }
+    .cardimg{
+      margin-top: 32px;
+      object-fit: cover;
+      width: 142px;
+      height: 142px;
+    }
+  }
+}
+.backorange{
+  background: #FF7F10;
+}
+.backred{
+  background-color: #CE3459;
+}
+.backyallow{
+  background-color: #55cc44;
+}
+.backbule{
+  background-color: #2f75f6;
+}
+
+// mui tabs
+.css-8atqhb{
+  margin-top: 50px;
+}
+
+.MuiButtonBase-root{
+  background: rgba(192, 194, 204, 0.5) !important;
+  border-radius: 10px !important;
+  margin-right: 10px !important;
+  font-size: 14px !important;
+  line-height: 116.3% !important;
+  letter-spacing: -0.01em;
+  color: #000000 !important;
+  opacity: 0.5 !important;
+}
+.Mui-selected{
+  background-color: $colorwhite !important;
+}
+
+.css-1gsv261{
+  border-bottom: 0 !important;
+}
+
+.cardtabs{
+  .tabstext{
+    h1{
+      font-size: 22px;
+      line-height: 16px;
+      letter-spacing: -0.02em;
+      color: #000000;
+    }
+  h2{
+      font-size: 22px;
+      line-height: 16px;
+      letter-spacing: -0.02em;
+      color: #000000;
+    cursor: pointer;
+    }
+  }
+  .tabscorecard{
+    margin-top: 20px;
+    padding: 15px 28px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0 2px 2px rgba(223, 226, 235, 0.79);
+    border-radius: 10px;
+    .tabsproductcard{
+
+      .tabsimg{
+        width: 131px;
+        height: 131px;
+        margin: 0 auto;
+      }
+      .tabscardtext{
+       p{
+         font-size: 14px;
+         line-height: 28px;
+         letter-spacing: -0.02em;
+         color: #000000;
+       }
+        h5{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: -0.02em;
+          color: #000000;
+          .addtabscard{
+            cursor: pointer;
+            padding: 13px 20px;
+            background: #C0C2CC;
+            border-radius:100% ;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

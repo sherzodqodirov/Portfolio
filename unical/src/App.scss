@@ -1,0 +1,73 @@
+//  Fonts
+@font-face {
+  font-family: Iner-Regular;
+  src: url(./Fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Iner-Medium;
+  src: url(./Fonts/Inter-Medium.ttf);
+}
+
+@font-face {
+  font-family: Iner-Bold;
+  src: url(./Fonts/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: Iner-SemiBold;
+  src: url(./Fonts/Inter-SemiBold.ttf);
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Iner-Regular;
+}
+
+// registor or login page
+
+.boxregistor{
+ .regimg{
+   background: linear-gradient(45deg, #1847FF 0%, #0F72FD 100%);
+    padding: 323px 240px;
+ }
+  .registorform{
+    padding: 324px 70px 0 70px;
+    h1{
+      font-family: Iner-Medium;
+      font-size: 24px;
+      line-height: 29px;
+      color: #5E5873;
+    }
+    p{
+      font-size: 14px;
+      line-height: 21px;
+      color: #333333;
+    }
+    .btnRegistor{
+      margin-top: 119px;
+    }
+    .btnLogin{
+      margin-top:69px ;
+    }
+    h5{
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 21px;
+      color: #333333;
+      text-align: center;
+      a{
+        margin-left: 22px;
+        font-family: Iner-Medium;
+        text-decoration:none;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.4px;
+        color: #006AFF;
+      }
+    }
+  }
+}
+//menu
