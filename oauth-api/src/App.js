@@ -16,7 +16,7 @@ function App() {
         <BrowserRouter>
             <Navbar/>
             <Routes>
-                <Route exact path="/" element={regist ? <Home/> : <Navigate to="/registor"/>}/>
+                <Route  path="/" element={regist ? <Home/> : <Navigate to="/registor"/>}/>
                 <Route path="/registor" element={<Register setregist={setregist}/>}/>
 
             </Routes>
