@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import {Form, Input, Button, message} from 'antd';
 import 'antd/dist/antd.css';
-const Register = () => {
+const Register = ({setregist}) => {
 
 const [form]=Form.useForm()
 
@@ -20,18 +20,18 @@ const [form]=Form.useForm()
             url:` https://${values._subdomain}.ox-sys.com/security/auth_check`,
         headers: {
             Accept: "application/json",
-                "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded"
         },
         data: data,
     })
     .then((res) => {
             console.log("succes👍", 'token:', res.data);
             localStorage.setItem('token', res.data.token);
-
+            setregist(true)
             form.resetFields();
         })
             .catch((err) => {
-                message.error("not entred login");
+                message.error("not entred login"+err.message);
             });
     };
 

@@ -6,29 +6,36 @@ import {Link} from "react-router-dom";
 const Registor = () => {
 
 
-
     const handleSubmit = (even) => {
         even.preventDefault()
-        const Phonename={
-            Phone:even.target.inputPhone.value,
-            Fullname:even.target.inputFullname.value,
+        const Phonename = {
+            Phone: even.target.inputPhone.value,
+            Fullname: even.target.inputFullname.value,
         }
         even.target.reset();
-        console.log(Phonename)
 
-        const data = "{\r\n    \"phoneNumber\":\"+998994958186\",\r\n    \"fullName\":\"Omonov Qahramon\"\r\n}";
+
 
         axios({
             method: 'post',
-            url: 'localhost:3000/register',
-            redirect: 'follow',
-            body : data
+            url: "https://app.numberstats.com/api/register",
+
+            body: {
+                first_name: "Sherzod",
+                last_name: "Qodirov",
+                email: "sherzodqadirov01@gmail.com",
+                password: "sherzod6134"
+            },
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            }
         })
-            .then( function (response) {
-                console.log( JSON.stringify(response.data));
+            .then((response) => {
+                console.log(response);
             })
-            .catch(function (error) {
-                console.log(error);
+            .catch((error) => {
+                console.log(error.message);
             });
 
     }
@@ -52,7 +59,7 @@ const Registor = () => {
                         <input type="text" className="form-control" id="inputFullname"
                                placeholder="Full name"/>
                     </div>
-                    <div className="col-12 btnRegistor" >
+                    <div className="col-12 btnRegistor">
                         <button type="submit" className="w-100 btn btn-primary">Registor</button>
                     </div>
                 </form>
