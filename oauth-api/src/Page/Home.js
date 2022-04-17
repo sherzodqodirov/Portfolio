@@ -1,9 +1,8 @@
-import React, {useDeferredValue, useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {data} from "../data";
+import data from "../data";
 
 const Home = () => {
-
     // useEffect(()=>{
     //     axios({
     //         method:"get",
@@ -22,34 +21,15 @@ const Home = () => {
     //         })
     // },[])
 
-const[value,setvalue]=useState('');
-const defferedValue=useDeferredValue(value);
-const [items,setitems]=useState(data);
-
-const filtereditems=useMemo(()=>{
-    return items.filter(item=>item.name.toLowerCase().includes(defferedValue))
-},[defferedValue]);
-
-const onChangeValue=(e)=>{
-    setvalue(e.target.value);
-}
-
 
     return (
-        <div className="container text-center">
-            <h1>Home</h1>
-
-            <input className="border my-5 w-25 p-2 " type="text" value={value} onChange={onChangeValue} placeholder="search"/>
-
-            <div>
-                {
-                    filtereditems.map(item=>(
-                        <div key={item.id}>
-                            <h6>{item.name}</h6>
-                        </div>
-                    ))
-                }
-            </div>
+        <div className="container ">
+            <h1>Data</h1>
+            <ol>
+                {data.map(item => (
+                <h5 key={item.id}><li>{item.name}</li></h5>
+            ))}
+            </ol>
         </div>
     );
 };

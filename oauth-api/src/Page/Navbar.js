@@ -6,15 +6,17 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-dark">
             <div className="container-fluid">
                 <Link className="nav-link text-white" to="/"><h1 className="text-white">Home</h1></Link>
+                <Link className="nav-link text-white" to="/search"><h1 className="text-white">Search</h1></Link>
 
 
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                           <li className="nav-item">
-                            <Link className="nav-link text-white "  to="/registor"><h1 className="text-white">Register</h1></Link>
-                        </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white " to="/registor"><h1 className="text-white">Register</h1>
+                        </Link>
+                    </li>
 
-                    </ul>
+                </ul>
 
 
             </div>

@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import Register from "./Page/Registor";
 import Home from "./Page/Home";
 import Navbar from "./Page/Navbar";
+import Searchsort from "./Page/Searchsort";
 
 function App() {
     const [regist, setregist] = useState(false);
@@ -15,11 +16,14 @@ function App() {
     return (
         <BrowserRouter>
             <Navbar/>
-            <Routes>
-                <Route  path="/" element={regist ? <Home/> : <Navigate to="/registor"/>}/>
-                <Route path="/registor" element={<Register setregist={setregist}/>}/>
+            {regist?(<Routes>
+                <Route path="/" element={<Home/> }/>
+                <Route path="/search" element={<Searchsort/>}/>
 
-            </Routes>
+            </Routes>):(
+                <Register setregist={setregist}/>
+            )}
+
         </BrowserRouter>
     );
 }
