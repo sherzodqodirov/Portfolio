@@ -1,0 +1,81 @@
+.boxlog{
+    width: 400px;
+}
+body{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+ /*loader*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #cef;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #cef transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*chat*/
+
+.chatlar{
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    height: 60vh;
+    border: 1px solid #e0e0e0;
+    overflow-y: auto;
+}
+.chatmessage{
+    margin-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;
+    padding: 5px;
+    width: 330px;
+    border-radius:10px ;
+}
+.namephoto{
+    display: flex;
+    align-items: center;
+}
+.imgemail{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+h6{
+    color: #000000;
+    margin-bottom: 0;
+    margin-left: 8px;
+}
+h5{
+    margin-top: 5px;
+
+}

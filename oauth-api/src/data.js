@@ -9,7 +9,7 @@ export  const data = [
     },
     {
         id: 3,
-        name: 'banan',
+        name: 'olcha',
     },
     {
         id: 4,
@@ -17,7 +17,7 @@ export  const data = [
     },
     {
         id: 5,
-        name: 'olcha',
+        name: 'banan',
     },
     {
         id: 6,

@@ -3,23 +3,25 @@ import axios from "axios";
 import data from "../data";
 
 const Home = () => {
-    // useEffect(()=>{
-    //     axios({
-    //         method:"get",
-    //         url:'https://toko.ox-sys.com/variations',
-    //         header:{
-    //             'Authorization':`Bearer${localStorage.getItem('token')}`,
-    //             'Content-Type':' application/json',
-    //             'Accept':' application/json',
-    //         }
-    //     })
-    //         .then((res)=>{
-    //             console.log(res )
-    //         })
-    //         .catch((err)=>{
-    //             console.log(err.message)
-    //         })
-    // },[])
+
+    
+    useEffect(()=>{
+        axios({
+            method:"get",
+            url:'https://toko.ox-sys.com/variations',
+            header:{
+                'Authorization':`Bearer ${localStorage.getItem('token')}`,
+                'Content-Type':' application/json',
+                'Accept':' application/json',
+            }
+        })
+            .then((res)=>{
+                console.log(res )
+            })
+            .catch((err)=>{
+                console.log(err.message)
+            })
+    },[])
 
 
     return (
