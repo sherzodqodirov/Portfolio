@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Iner-Regular;
+    src: url(./src/Fonts/);
+}
+
+
+
+/* header */
+.loginnav{
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 88px;
+}
+
+/*logonav and nav icons*/
+.logoicon{
+    width: 300px;
+    height: 58.45px;
+    object-fit: cover;
+}
+
+.navitem{
+    display: flex;
+}
+.headericons{
+    width: 70px;
+    height: 70px;
+}
