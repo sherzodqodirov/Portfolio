@@ -1,0 +1,112 @@
+@font-face {
+  font-family: Inter-Regular;
+  src: url(../../Fonts/Inter-Regular.ttf);
+}
+
+.header-content {
+  font-family: Inter-Regular;
+  margin-bottom: 150px;
+  .logo1 {
+    margin: 83px auto 74px auto;
+    width: 150px;
+    height: 204px;
+    object-fit: cover;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 36px;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+  }
+
+  p {
+
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+  }
+
+  .boxform {
+    padding: 0 22px;
+
+    .loginform {
+      margin: 0 auto;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+      }
+
+      #idnumber {
+        width: 100%;
+        padding: 25px 10px;
+        font-size: 22px;
+        background: #FFFFFF;
+        border: 3px solid #0096DB;
+        box-sizing: border-box;
+        border-radius: 5px;
+        outline-color: rgba(0, 150, 219, 0.26);
+      }
+    }
+  }
+
+  .appstoreplay {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+    .appstore {
+      margin-right: 40px;
+      cursor: pointer;
+      width: 143px;
+      height: 43px;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: 0.6s;
+      }
+    }
+
+    .googleplay {
+      cursor: pointer;
+      width: 143px;
+      height: 43px;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: 0.6s;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header-content {
+    margin-bottom: 80px;
+    .logo1 {
+      margin: 30px auto 50px auto;
+    }
+
+    h1 {
+      margin-top: 50px;
+      margin-bottom: 25px;
+      font-size: 25px;
+      line-height: 34px;
+    }
+
+    p {
+      font-size: 9px;
+      line-height: 13px;
+    }
+
+    .appstoreplay {
+      margin-top: 50px;
+    }
+  }
+}
