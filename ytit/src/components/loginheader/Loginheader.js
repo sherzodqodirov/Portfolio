@@ -7,7 +7,7 @@ import addressicon from '../../icons/addressicon.svg'
 const Loginheader = () => {
 
     return (
-        <nav className="navbar navbar-expand-xl navbar-light border">
+        <nav className=" navreg navbar navbar-expand-xl navbar-light border">
         <div className="container">
             <a className="navbar-brand" href="#">
                 <div className="logoicon">
