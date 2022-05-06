@@ -2,6 +2,10 @@ import React from 'react';
 import {AiOutlineSearch} from "@react-icons/all-files/ai/AiOutlineSearch";
 import {IoNotifications} from "@react-icons/all-files/io5/IoNotifications";
 import {HiOutlineMenuAlt1} from "@react-icons/all-files/hi/HiOutlineMenuAlt1";
+import {BsFillPersonLinesFill} from "@react-icons/all-files/bs/BsFillPersonLinesFill";
+import {FaClipboardList} from "@react-icons/all-files/fa/FaClipboardList";
+import {FaRegCalendarAlt} from "@react-icons/all-files/fa/FaRegCalendarAlt";
+import {FaUserGraduate} from "@react-icons/all-files/fa/FaUserGraduate";
 import avataruser from '../../icons/avataruser.png';
 import './navinform.scss'
 import logonav from '../../icons/logonav.png'
@@ -22,15 +26,44 @@ const Navinform = () => {
                                 <div className="navlogoM">
                                     <img className='w-100' src={logonav} alt="logo"/>
                                 </div>
-                                Menu
+
                             </h5>
                             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                         </div>
                         <div className="offcanvas-body">
-                            <div>
-                                setting
-                            </div>
+                            <a href="#">
+                                <div className="menuoption">
+                                    <div className="optionicon">
+                                        <BsFillPersonLinesFill size='24px' color='grey' className='mx-3'/>
+                                    </div>
+                                    <h6>Personal information</h6>
+                                </div>
+                            </a>
+                         <a href="#">
+                                <div className="menuoption">
+                                    <div className="optionicon">
+                                        <FaClipboardList size='24px' color='grey' className='mx-3'/>
+                                    </div>
+                                    <h6>Results</h6>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div className="menuoption">
+                                    <div className="optionicon">
+                                        <FaRegCalendarAlt size='24px' color='grey' className='mx-3'/>
+                                    </div>
+                                    <h6>Exam schedule</h6>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div className="menuoption">
+                                    <div className="optionicon">
+                                        <FaUserGraduate size='24px' color='grey' className='mx-3'/>
+                                    </div>
+                                    <h6>Graduate</h6>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <button className="btn  p-0 border-0 btnmen me-md-5 me-sm-4" type="button" data-bs-toggle="offcanvas"

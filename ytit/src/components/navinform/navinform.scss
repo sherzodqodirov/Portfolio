@@ -1,9 +1,44 @@
+@font-face {
+  font-family: Inter-Medium;
+  src: url(../../Fonts/Inter-Medium.ttf);
+}
 
 .navinform {
   padding: 14px 30px;
- .btnmen{
-   box-shadow: none;
- }
+
+  .btnmen {
+    box-shadow: none;
+  }
+
+  .offcanvas-start {
+    width: 320px;
+  }
+
+  .offcanvas-body {
+    .menuoption {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px 0;
+      border-radius: 5px;
+
+      h6 {
+        font-family: Inter-Medium;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.1px;
+        color: rgba(0, 0, 0, 0.87);
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        background-color: rgba(0, 150, 219, 0.5);
+      }
+    }
+  }
+
   .navlogoD {
     width: 189px;
     height: 37px;
@@ -11,7 +46,9 @@
   }
 
   .navlogoM {
-    display: none;
+    width: 189px;
+    height: 37px;
+    object-fit: cover;
   }
 
   .ulinform {
@@ -49,20 +86,20 @@
   }
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   .navinform {
     padding: 10px 0;
 
     .navlogoD {
-     display: none;
+      display: none;
     }
 
-    .navlogoM {
-      display: block;
-      width: 189px;
-      height: 37px;
-      object-fit: cover;
-    }
+    //.navlogoM {
+    //  display: block;
+    //  width: 189px;
+    //  height: 37px;
+    //  object-fit: cover;
+    //}
 
     .ulinform {
       padding-left: 0;
