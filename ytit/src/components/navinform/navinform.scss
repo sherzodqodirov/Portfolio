@@ -1,7 +1,9 @@
 
 .navinform {
   padding: 14px 30px;
-
+ .btnmen{
+   box-shadow: none;
+ }
   .navlogoD {
     width: 189px;
     height: 37px;
@@ -47,9 +49,9 @@
   }
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 700px){
   .navinform {
-    padding: 10px 0px;
+    padding: 10px 0;
 
     .navlogoD {
      display: none;
@@ -57,8 +59,8 @@
 
     .navlogoM {
       display: block;
-      width: 55px;
-      height: 55px;
+      width: 189px;
+      height: 37px;
       object-fit: cover;
     }
 

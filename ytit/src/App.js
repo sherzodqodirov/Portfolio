@@ -8,7 +8,7 @@ function App() {
       <>
       {/*<LoginPage/>*/}
       {/*<Signup/>*/}
-          <P_information/>
+      <P_information/>
       </>
   );
 }

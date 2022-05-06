@@ -7,7 +7,7 @@ const P_information = () => {
     return (
         <>
        <Navinform/>
-       <Coreinform/>
+       {/*<Coreinform/>*/}
         </>
     );
 };
