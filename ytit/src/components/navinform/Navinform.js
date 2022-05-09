@@ -9,6 +9,7 @@ import {FaUserGraduate} from "@react-icons/all-files/fa/FaUserGraduate";
 import avataruser from '../../icons/avataruser.png';
 import './navinform.scss'
 import logonav from '../../icons/logonav.png'
+import {NavLink,Outlet} from "react-router-dom";
 
 const Navinform = () => {
 
@@ -32,38 +33,36 @@ const Navinform = () => {
                                     aria-label="Close"></button>
                         </div>
                         <div className="offcanvas-body">
-                            <a href="#">
-                                <div className="menuoption">
+
+                                <NavLink to='/' className="menuoption">
                                     <div className="optionicon">
                                         <BsFillPersonLinesFill size='24px' color='grey' className='mx-3'/>
                                     </div>
                                     <h6>Personal information</h6>
-                                </div>
-                            </a>
-                         <a href="#">
-                                <div className="menuoption">
+                                </NavLink>
+
+
+                                <NavLink to='results' className="menuoption">
                                     <div className="optionicon">
                                         <FaClipboardList size='24px' color='grey' className='mx-3'/>
                                     </div>
                                     <h6>Results</h6>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div className="menuoption">
+                                </NavLink>
+
+                                <NavLink to='exam-schedule' className="menuoption">
                                     <div className="optionicon">
                                         <FaRegCalendarAlt size='24px' color='grey' className='mx-3'/>
                                     </div>
                                     <h6>Exam schedule</h6>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div className="menuoption">
+                                </NavLink>
+
+                                <NavLink to='graduate' className="menuoption">
                                     <div className="optionicon">
                                         <FaUserGraduate size='24px' color='grey' className='mx-3'/>
                                     </div>
                                     <h6>Graduate</h6>
-                                </div>
-                            </a>
+                                </NavLink>
+                            
                         </div>
                     </div>
                     <button className="btn  p-0 border-0 btnmen me-md-5 me-sm-4" type="button" data-bs-toggle="offcanvas"
@@ -107,6 +106,7 @@ const Navinform = () => {
                     </li>
                 </ul>
             </div>
+            <Outlet/>
         </nav>
     );
 };

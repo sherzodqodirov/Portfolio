@@ -1,16 +1,13 @@
 import React from "react";
-import LoginPage from "./pages/loginpage/LoginPage";
-import Signup from "./pages/signup/Signup";
-import P_information from "./pages/p_information/P_information";
+import {BrowserRouter} from "react-router-dom";
+import AppRouter from "./AppRouter";
 
 function App() {
-  return (
-      <>
-      {/*<LoginPage/>*/}
-      {/*<Signup/>*/}
-      <P_information/>
-      </>
-  );
+    return (
+        <BrowserRouter>
+            <AppRouter/>
+        </BrowserRouter>
+    );
 }
 
 export default App;

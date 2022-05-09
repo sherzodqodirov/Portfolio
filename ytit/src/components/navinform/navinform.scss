@@ -32,11 +32,14 @@
         color: rgba(0, 0, 0, 0.87);
         margin-bottom: 0;
       }
-
       &:hover {
-        background-color: rgba(0, 150, 219, 0.5);
+        background-color: rgb(214, 232, 255);
       }
     }
+    .active{
+      background-color: rgba(0, 150, 219, 0.5);
+    }
+
   }
 
   .navlogoD {

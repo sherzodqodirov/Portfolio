@@ -7,6 +7,7 @@ import Socialmedia from "../../components/socialmedia/Socialmedia";
 const Signup = () => {
 
     const handlPasswordID = (e) => {
+
         e.preventDefault();
         const idsignup = {
             idstudent: e.target.idstudent.value,
