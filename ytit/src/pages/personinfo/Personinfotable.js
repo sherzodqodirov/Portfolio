@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './personinfo.scss'
 const Persanalinfotable = () => {
     return (
         <div className='container-md'>
-            <table className="table mt-5  table-bordered border-secondary table-hover">
+            <table className="table mt-5   table-bordered border-secondary table-hover" >
                 <thead>
                 <tr className='table-active'>
                     <th scope="col">ID</th>

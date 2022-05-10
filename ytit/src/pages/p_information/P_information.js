@@ -7,6 +7,7 @@ import {Routes, Route} from "react-router-dom";
 import Results_m from "../results_m/Results_m";
 import ExamSchedule from "../examschedule/ExamSchedule";
 import Graduate from "../graduate/Graduate";
+import NotFound from "../notfound/NotFound";
 
 const P_information = () => {
     return (
@@ -18,6 +19,7 @@ const P_information = () => {
                     <Route path='results' element={<Results_m/>}/>
                     <Route path='exam-schedule' element={<ExamSchedule/>}/>
                     <Route path='graduate' element={<Graduate/>}/>
+                    <Route path='*' element={<NotFound/>}/>
                 </Route>
             </Routes>
 
