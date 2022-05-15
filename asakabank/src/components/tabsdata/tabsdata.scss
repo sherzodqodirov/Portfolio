@@ -1,0 +1,132 @@
+
+.creditoborot {
+
+  .creditimgob {
+    width: 353px;
+    height: 442px;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+
+.creditobtext {
+  h2 {
+    font-family: Acrom-Bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #373739;
+  }
+
+  ul {
+    margin-top: 28px;
+    padding: 0;
+    li {
+      list-style: none;
+      margin-bottom: 18px;
+      font-family: Acrom-Regular;
+      font-size: 16px;
+      line-height: 17px;
+      letter-spacing: -0.05em;
+      color: #373739;
+    }
+  }
+  .bankcreditin{
+    margin-top: 38px;
+    display: flex;
+    justify-content: space-between;
+    .getmoney{
+      h5{
+        font-family: Acrom-Bold;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.05em;
+        color: #373739;
+      }
+      p{
+        font-family: Acrom-Regular;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: -0.05em;
+        color: #373739;
+      }
+    }
+  }
+  .btnzayavkalar{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    .podzay{
+      padding: 18px 33px;
+      border-radius: 30px;
+      font-family: Acrom-Bold;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: -0.05em;
+    }
+    h5{
+      margin-left: 26px;
+      margin-bottom: 0;
+      font-family: Acrom-Regular;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: -0.05em;
+      color: #A7A9BA;
+      cursor: pointer;
+      &:hover{
+        color: black;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px){
+  .creditoborot {
+
+    .creditimgob {
+      margin: 0 auto;
+      width: 300px;
+      height: 389px;
+    }
+  }
+
+  .creditobtext {
+    h2 {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    ul {
+      li {
+        margin-bottom: 20px;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+      }
+    }
+    .bankcreditin{
+      .getmoney{
+        h5{
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: -0.04em;
+        }
+        p{
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+    }
+
+    .btnzayavkalar{
+      margin-top: 45px;
+      .podzay{
+        padding: 14px 25px;
+        font-size: 13px;
+      }
+
+    }
+  }
+
+}

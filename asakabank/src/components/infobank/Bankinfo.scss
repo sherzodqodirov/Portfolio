@@ -1,0 +1,172 @@
+
+.iconbank {
+  margin-top: 100px;
+
+  .cardicon {
+    .iconbody {
+      width: 52px;
+      height: 52px;
+      padding: 14px;
+      background: #F0F2F4;
+      border-radius: 12px;
+    }
+
+    h6 {
+      margin-top: 14px;
+      font-family: Acrom-Bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: #373739;
+    }
+
+    p {
+      margin-top: 16px;
+      font-family: Acrom-Regular;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: -0.05em;
+      color: #A7A9BA;
+    }
+  }
+
+}
+
+.cardsbank {
+  margin-top: 100px;
+
+  .selectsty {
+    padding: 36px 0 0 28px;
+    background: #F5F7F9;
+    border-radius: 12px;
+
+    h1 {
+      font-family: Acrom-Bold;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.05em;
+      color: #373739;
+    }
+
+    p {
+      margin-top: 23px;
+      font-family: Acrom-Regular;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: -0.05em;
+      color: #A7A9BA;
+    }
+
+    .telef {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      .iphone {
+        display: flex;
+        align-items: flex-end;
+        z-index: 10;
+        margin-right: -40px;
+        width: 154px;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .mockup {
+        display: flex;
+        align-items: flex-end;
+        width: 288px;
+        height: 172px;
+        object-fit: cover;
+      }
+    }
+
+  }
+}
+
+.minicardbank{
+  margin-top: 28px;
+  padding: 20px 22px 28px 28px;
+  background: #F5F7F9;
+  border-radius: 12px;
+  h1 {
+    font-family: Acrom-Bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: #373739;
+  }
+
+  p {
+    margin-top: 23px;
+    font-family: Acrom-Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.05em;
+    color: #A7A9BA;
+  }
+  .minicardimg{
+    width: 160px;
+    height: 146px;
+    object-fit: cover;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .iconbank {
+    margin-top: 90px;
+
+    .cardicon {
+      h6 {
+        font-size: 12px;
+      }
+
+      p {
+        margin-top: 14px;
+        font-size: 10px;
+      }
+    }
+
+  }
+
+  .cardsbank {
+    margin-top: 50px;
+
+    .selectsty {
+      padding: 36px 28px 0 28px;
+      h1 {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 23px;
+        margin-bottom: 10px;
+      }
+
+
+
+    }
+  }
+
+  .minicardbank{
+    padding: 25px;
+    h1 {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 13px;
+    }
+    .minicardimg{
+      margin: 0 auto;
+      width: 160px;
+      height: 146px;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+
+.bankfooter {
+  margin-top: 45px;
+  margin-bottom: 50px;
+  .ulf {
+    padding-left: 0;
+    a{
+      color: #5a5a5a;
+      text-decoration: none;
+      li{
+        margin-bottom: 8px;
+        list-style: none;
+        font-family: Acrom-Medium;
+        font-size: 14px;
+      }
+      &:hover{
+        color: red;
+      }
+    }
+  }
+  h4{
+    font-family: Acrom-Regular;
+    font-size: 13px;
+    color: #4d4d4d;
+  }
+  h3{
+    font-family: Acrom-Regular;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bankfooter {
+    .ulf {
+      margin-bottom: 25px;
+      a{
+        li{
+          font-size: 15px;
+        }
+      }
+    }
+    h4{
+      font-size: 15px;
+      margin-bottom: 15px;
+      margin-top: 10px;
+    }
+    h3{
+      font-family: Acrom-Regular;
+      font-size: 25px;
+    }
+  }
+}

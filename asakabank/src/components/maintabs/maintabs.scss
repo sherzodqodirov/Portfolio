@@ -1,0 +1,44 @@
+
+.tabsbankinfo{
+  h1{
+    margin-top: 90px;
+    margin-bottom: 24px;
+    font-family: Acrom-Bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #373739;
+  }
+
+  .css-1gsv261{
+    border:none;
+  }
+  .css-heg063-MuiTabs-flexContainer {
+    flex-wrap:nowrap;
+    overflow-x:auto;
+  }
+
+  .MuiButtonBase-root{
+    margin-right: 10px;
+    padding: 10px 20px;
+    background: #F0F2F4;
+    border-radius: 50px;
+     font-family: Acrom-Regular;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.05em;
+    color: #373739;
+  }
+  .Mui-selected{
+    background: #373739;
+    border-radius: 50px;
+    font-family: Acrom-Bold;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.05em;
+    color: #F9FAF9 !important;
+  }
+  .MuiTabs-indicator{
+    background-color: transparent;
+  }
+  }

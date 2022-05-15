@@ -1,0 +1,156 @@
+.navbar1{
+  background-color: #F0F3F5;
+  border-bottom: 1px solid #E2E7EA;
+  .navbar-brand{
+    padding: 28px 0;
+    .logonav{
+      width: 169px;
+      height: 33px;
+    }
+
+  }
+   .ulnav{
+     .active{
+       transition: 0.5s;
+       color: #373739;
+       border-bottom: 1px solid #D70C17;
+     }
+    .nav-link{
+      padding: 0;
+      padding-right: 42px;
+      h5{
+        margin-bottom: 0;
+        padding-top: 12px;
+        padding-bottom: 6px;
+        font-family: Acrom-Medium;
+        font-size: 15px;
+        line-height: 17px;
+        color: #A7A9BA;
+        border-bottom: 1px solid #F0F3F5;
+        cursor: pointer;
+        &:hover{
+          transition: 0.5s;
+          color: #373739;
+          border-bottom: 1px solid #D70C17;
+        }
+      }
+    }
+     .lang{
+       padding-left: 82px;
+       padding-right: 50px;
+       h5{
+         color: #373739;
+         .seleng{
+           background-color: transparent;
+           border:none;
+           outline: none;
+         }
+       }
+     }
+
+     .call{
+       padding: 11px 18px;
+       background: #D70C17;
+       border-radius: 30px;
+       cursor: pointer;
+       h6{
+         font-family: Acrom-Medium;
+         font-size: 10px;
+         line-height: 10px;
+         color: #FF9095;
+         span{
+           font-family: Acrom-Bold;
+           font-size: 14px;
+           line-height: 17px;
+           color: #FFFFFF;
+         }
+       }
+       &:hover{
+         background-color: #a2040e;
+       }
+     }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+  .navbar1{
+    .navbar-brand{
+      padding: 25px 0;
+      .logonav{
+        width: 150px;
+        height: 30px;
+      }
+
+    }
+    .ulnav{
+      .active{
+        transition: 0.5s;
+        color: #373739;
+        border-bottom: 1px solid #D70C17;
+      }
+      .nav-link{
+        padding:0 ;
+        padding-right: 30px;
+        h5{
+          padding-top: 15px;
+          font-size: 15px;
+        }
+      }
+      .lang{
+        padding-left: 40px;
+        padding-right: 30px;
+
+      }
+    }
+  }
+
+}
+
+@media screen and(max-width: 991px) {
+  .navbar1{
+    .navbar-brand{
+      padding: 8px 0;
+    }
+    .ulnav{
+
+      .nav-link{
+        padding:0 ;
+        padding-right: 42px;
+        h5{
+          margin-bottom: 0;
+          padding-top: 12px;
+          padding-bottom: 6px;
+          font-family: Acrom-Medium;
+          font-size: 15px;
+          line-height: 17px;
+          color: #A7A9BA;
+          border-bottom: 1px solid #F0F3F5;
+          cursor: pointer;
+          &:hover{
+            transition: 0.5s;
+            color: #373739;
+            border-bottom: 1px solid #D70C17;
+          }
+        }
+      }
+      .lang{
+        padding-left: 0;
+        padding-right: 0;
+        h5{
+          color: #373739;
+
+        }
+      }
+
+      .call{
+        margin-top:15px;
+        width: 180px;
+        h6{
+          span{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
