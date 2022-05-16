@@ -1,0 +1,19 @@
+
+nav{
+    border-bottom: 1px solid silver;
+    padding: 15px 30px !important;
+    .nav-link{
+        padding: 5px 10px !important;
+        border: 1px solid rgb(168, 168, 168);
+        border-radius: 20px;
+        color: #000;
+        font-weight: 600;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .active{
+        background-color: silver;
+        color: #fff !important;
+    }
+}
