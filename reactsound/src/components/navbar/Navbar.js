@@ -8,7 +8,7 @@ import "./navbar.scss";
 function Navbar() {
   const [play] = useSound(click);
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className="navbar navbar-expand-lg " onContextMenu={(e)=> e.preventDefault()} >
       <div className="container">
         <Link onClick={play} to="/" className="navbar-brand">
           <h3>Developer</h3>

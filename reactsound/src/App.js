@@ -57,7 +57,7 @@ console.log(backcolor);
     <BrowserRouter>
       <Navbar />
       <Routes>
-          <Route path="/" element={<Home backcolor={backcolor}/>} />
+          <Route path="/" element={<Home backcolor={backcolor} />} />
           <Route path="/features" element={<Features backcolor={backcolor} />} />
           <Route path="/pricing" element={<Pricing backcolor={backcolor}/>} />
       </Routes>
