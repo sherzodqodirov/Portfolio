@@ -44,7 +44,7 @@ holdBtn.addEventListener('click', function () {
   activeUser = activeUser === 0 ? 1 : 0;
   player0.classList.toggle('player--active');
   player1.classList.toggle('player--active');
-  if (totalScores[activeUser] >= 10) {
+  if (totalScores[activeUser] >=50) {
     document
       .querySelector('.player--' + activeUser)
       .classList.add('player--winner');

@@ -1,0 +1,22 @@
+.header{
+    padding: 25px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link-item{
+    display: flex;
+    align-items: center;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+.link-item:hover{
+    color: blue;
+}
+.active{
+    color: red;
+}
+

@@ -1,0 +1,13 @@
+.cartblock{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.cartblock:hover{
+    color: blue;
+}
+.total-cart{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}

@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./homepage.css"
+import Data from "../../Data";
+import CoverGame from "../../components/covergame/CoverGame";
 
-export const HomePage = () => {
+const HomePage = () => {
+     console.log(Data)
+
     return (
-        <div>
-            HomePage
+        <div className='homebox container'>
+           <div className="corecovergame">
+               {Data.map((Data)=><CoverGame key={Data.id} Data={Data}/>)}
+           </div>
         </div>
     );
 };
+
+export default HomePage;
 
 

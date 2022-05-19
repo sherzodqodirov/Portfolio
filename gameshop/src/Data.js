@@ -1,4 +1,4 @@
-const GAME = [
+const Data = [
     {
         id: 1,
         image: '/Gamecovers/cs_go.png',
@@ -40,4 +40,4 @@ const GAME = [
         video: 'https://youtu.be/8X2kIfS6fb8',
     },
 ];
-export default GAME;
+export default Data;

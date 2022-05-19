@@ -1,0 +1,13 @@
+
+*{
+    user-select: none;
+}
+.corecovergame{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.homebox{
+    margin-bottom: 50px;
+}
+
