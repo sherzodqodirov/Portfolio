@@ -2,3 +2,17 @@ body{
     background-color: #1a1a1a;
     color: white;
 }
+
+::-webkit-scrollbar {
+    width: 11px;
+}
+::-webkit-scrollbar-track {
+    background: transparent; /* цвет фона у дорожки */
+}
+::-webkit-scrollbar-thumb {
+    background: #565656;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #747474;
+}
