@@ -4,7 +4,7 @@ body{
 }
 
 ::-webkit-scrollbar {
-    width: 11px;
+    width: 9px;
 }
 ::-webkit-scrollbar-track {
     background: transparent; /* цвет фона у дорожки */

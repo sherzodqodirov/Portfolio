@@ -1,13 +1,30 @@
-.cartblock{
+.cartblock {
+    position: relative;;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-.cartblock:hover{
+
+.cartblock:hover {
     color: blue;
 }
-.total-cart{
+
+.total-cart {
     font-size: 20px;
     font-weight: bold;
     margin-left: 10px;
+}
+
+.listgame {
+    overflow: auto;
+    color: white;
+    position: absolute;
+    padding: 10px;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #090909;
+    box-shadow: inset 2px 2px 3px 0 #373737;
+    top: 30px;
+    left: -220px;
 }
