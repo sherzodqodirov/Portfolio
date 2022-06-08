@@ -1,10 +1,9 @@
 import React from 'react';
-
 import {FaCartPlus} from "react-icons/fa";
 import {BsCartXFill} from "react-icons/bs";
-import './buybtn.css';
 import {useDispatch, useSelector} from "react-redux";
 import {additemCartpush, deleteCart} from "../../redux/cart/reducer";
+import './buybtn.css';
 
 const GameBuybtn = ({Data}) => {
 
@@ -28,9 +27,7 @@ const GameBuybtn = ({Data}) => {
                     <h6 className='mb-0'><FaCartPlus size='28px' color='red'/></h6>}
                 {isitemsCart ? <h6 className='mb-0'>Удалить</h6> : <h6 className='mb-0'>{Data.price} $ В Карзину </h6>}
             </button>
-            <a href={Data.downtorr}  download className='mt-3'>
-                <button className='mt-3 btn btn-warning' type="button"><h6>Cкачать торрент</h6></button>
-            </a>
+
         </>);
 
 };

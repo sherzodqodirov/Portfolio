@@ -19,4 +19,7 @@
 .active{
     color: red;
 }
-
+.carzinabox{
+    display: flex;
+    align-items: center;
+}

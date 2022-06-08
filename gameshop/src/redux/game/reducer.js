@@ -1,21 +1,17 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const cartSlice = createSlice({
-    name: 'cart',
+const gameSlice = createSlice({
+    name: 'game',
     initialState: {
-        itemsCarts: []
+        currentgame:null,
     },
     reducers: {
-        additemCartpush: (state, action) => {
-            state.itemsCarts.push(action.payload);
+        setcurrentGame: (state, action) => {
+            state.currentgame=action.payload
         },
-        deleteCart: (state, action) => {
-            state.itemsCarts = state.itemsCarts.filter(game => game.id !== action.payload)
-        }
-
     }
 })
 
-export const {additemCartpush, deleteCart} = cartSlice.actions;
-export default cartSlice.reducer;
+export const {setcurrentGame} = gameSlice.actions;
+export default gameSlice.reducer;
 

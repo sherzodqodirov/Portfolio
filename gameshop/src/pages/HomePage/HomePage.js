@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
-import "./homepage.css"
 import Data from "../../Data";
 import CoverGame from "../../components/covergame/CoverGame";
+import "./homepage.css"
 
 const HomePage = () => {
-     console.log(Data)
 
     return (
         <div className='homebox container'>
