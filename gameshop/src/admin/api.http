@@ -1,0 +1,22 @@
+# curl -X GET "https://game-shop-uz.herokuapp.com/api/auth/game" -H "accept: */*"
+GET https://game-shop-uz.herokuapp.com/api/auth/game
+Accept: application/json
+
+###
+
+admin
+# curl -X POST "https://game-shop-uz.herokuapp.com/api/admin/game/" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"description\": \"string\", \"hashId\": \"string\", \"name\": \"string\", \"torrentUrl\": \"string\", \"videoUrl\": \"string\"}"
+POST https://game-shop-uz.herokuapp.com/api/admin/game/
+accept: */*
+Content-Type: application/json
+
+{
+  "description": "string",
+  "hashId": "string",
+  "name": "string",
+  "torrentUrl": "string",
+  "videoUrl": "string"
+}
+
+###
+
