@@ -24,7 +24,7 @@ const GameBuybtn = ({Data}) => {
             <button onClick={handleclick}
                     className={isitemsCart ? ' btn btn-danger gamebuybtn' : ' btn btn-primary gamebuybtn'}>
                 {isitemsCart ? <h6 className='mb-0'><BsCartXFill size='28px' color='#71C562'/></h6> :
-                    <h6 className='mb-0'><FaCartPlus size='28px' color='red'/></h6>}
+                    <h6 className='mb-0'><FaCartPlus size='28px' color='#fff78b'/></h6>}
                 {isitemsCart ? <h6 className='mb-0'>Удалить</h6> : <h6 className='mb-0'>{Data.price} $ В Карзину </h6>}
             </button>
 

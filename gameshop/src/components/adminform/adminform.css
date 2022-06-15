@@ -1,0 +1,13 @@
+
+.isinput{
+    display: block;
+    width: 320px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    border:1px solid silver;
+    font-size: 20px;
+
+}

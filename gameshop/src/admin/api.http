@@ -11,4 +11,60 @@ Content-Type: application/json
 
 ###
 
+# admin post
+# curl -X POST "https://game-shop-uz.herokuapp.com/api/admin/game/" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"description\": \"string\", \"gener\": \"string\", \"imageUrl\": \"string\", \"name\": \"string\", \"torrentUrl\": \"string\", \"videoUrl\": \"string\"}"
+POST https://game-shop-uz.herokuapp.com/api/admin/game/
+accept: */*
+Content-Type: application/json
+
+{
+  "description": "string",
+  "gener": "string",
+  "imageUrl": "string",
+  "name": "string",
+  "torrentUrl": "string",
+  "videoUrl": "string"
+}
+
+###
+
+# admin put
+# curl -X PUT "https://game-shop-uz.herokuapp.com/api/admin/game/d62b4b8c-b477-42c1-9a02-bbe0fd41abae" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"description\": \"string\", \"gener\": \"string\", \"imageUrl\": \"string\", \"name\": \"string\", \"torrentUrl\": \"string\", \"videoUrl\": \"string\"}"
+PUT https://game-shop-uz.herokuapp.com/api/admin/game/d62b4b8c-b477-42c1-9a02-bbe0fd41abae
+accept: */*
+Content-Type: application/json
+
+{
+  "description": "string",
+  "gener": "string",
+  "imageUrl": "string",
+  "name": "string",
+  "torrentUrl": "string",
+  "videoUrl": "string"
+}
+
+###
+
+# admin delete
+# curl -X DELETE "https://game-shop-uz.herokuapp.com/api/admin/game/d62b4b8c-b477-42c1-9a02-bbe0fd41abae" -H "accept: */*"
+DELETE https://game-shop-uz.herokuapp.com/api/admin/game/d62b4b8c-b477-42c1-9a02-bbe0fd41abae
+accept: */*
+
+###
+
+# get all games
+# curl -X GET "https://game-shop-uz.herokuapp.com/api/auth/game" -H "accept: */*"
+GET https://game-shop-uz.herokuapp.com/api/auth/game
+accept: */*
+
+###
+
+# get find game
+# curl -X GET "https://game-shop-uz.herokuapp.com/api/auth/game/d62b4b8c-b477-42c1-9a02-bbe0fd41abae" -H "accept: */*"
+GET https://game-shop-uz.herokuapp.com/api/auth/game/d62b4b8c-b477-42c1-9a02-bbe0fd41abae
+accept: */*
+
+###
+
+
 

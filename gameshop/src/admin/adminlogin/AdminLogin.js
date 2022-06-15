@@ -40,7 +40,6 @@ const AdminLogin = ({setadreg}) => {
 
         })
             .then(res => {
-                console.log(res.data.token)
                 localStorage.setItem('token',res.data.token)
                 setadreg(true)
                 navigate("/paneladmin")

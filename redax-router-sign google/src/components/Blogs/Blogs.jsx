@@ -14,7 +14,7 @@ const Blogs = () => {
 
   const fetchData=()=>{
     return blogs.map((item,index)=>(
-      <div className="col-4"key={index}>
+      <div className="col-4" key={index}>
       <div className="card bg-dark mb-2">
         <div className="card-body">
           <img className="w-100" src={item.blog.image} alt={item.blog.title} />
