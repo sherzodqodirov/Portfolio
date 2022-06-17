@@ -9,6 +9,8 @@ import Errorpage from "./pages/errorpage/Errorpage";
 import AdminPanel from "./admin/adminpanel/AdminPanel";
 import AdminLogin from "./admin/adminlogin/AdminLogin";
 import './App.css';
+import axios from "axios";
+import {allgames} from "./redux/getallgames/reducer";
 
 function App() {
 
@@ -16,6 +18,22 @@ function App() {
     useEffect(() => {
         localStorage.getItem('token') && setadreg(localStorage.getItem('token'));
     }, [])
+
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        getallgames()
+    },[])
+
+    async function getallgames() {
+        try {
+            const res = await axios.get("https://game-shop-uz.herokuapp.com/api/auth/game")
+            dispatch(allgames(res.data.data))
+        } catch (e) {
+            console.error(e.message)
+        }
+    }
+
 
 
 

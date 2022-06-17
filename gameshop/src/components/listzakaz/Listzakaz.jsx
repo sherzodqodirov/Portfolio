@@ -18,8 +18,7 @@ const Listzakaz = ({games}) => {
                 </div>
                 <div className="col-md-8 ">
                     <div className="mt-3 zakaztext ">
-                        <h4 className='text-info'>{games.title}</h4>
-                        <h4 className='text-success'> price: {games.price}$</h4>
+                        <h4 className='text-info'>{games.name}</h4>
                         <button className='mt-3 btn btn-danger' onClick={handleClick}>Удалить</button>
                     </div>
                 </div>

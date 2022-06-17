@@ -1,0 +1,19 @@
+.bodygame{
+    border:1px solid #434343;
+    padding: 10px !important;
+    border-radius: 5px;
+    background-color: rgba(30, 47, 43, 0.41);
+}
+.imglistbox{
+    width: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.imglist{
+    width: 100%;
+}
+
+.liscur{
+    cursor: pointer;
+}

@@ -37,11 +37,11 @@ const Carzina = () => {
                 className="position-absolute top-0  start-0 translate-middle badge rounded-pill bg-danger">
                        {init}
             </span>
-            <span className='total-cart'>{summoney}$</span></>) : null}
+            </>) : null}
         {isCart ? (<div className='listgame'>
             { items.length>0 ? items.map((itm, idn) => (<ListCartgame key={idn}  itm={itm} idn={idn}/>)):"No Game !"}
             <hr/>
-            <h6 className='text-end'> total: {summoney}$</h6>
+
             <button className=' mt-3 btn btn-primary' onClick={handelzakaz} >оформить заказ</button>
         </div>) : null}
 

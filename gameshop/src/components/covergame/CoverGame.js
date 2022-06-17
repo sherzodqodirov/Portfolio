@@ -5,28 +5,28 @@ import {setcurrentGame} from "../../redux/game/reducer";
 import GameBuybtn from "../gamebuy/GameBuybtn";
 import './covergame.css'
 
-const CoverGame = ({Data}) => {
+const CoverGame = ({data}) => {
 
     const navigate=useNavigate()
     const {title}=useParams()
     const dispatch=useDispatch()
     const handleClick = () => {
-        navigate(`/app/${Data.title}`)
-        dispatch(setcurrentGame(Data));
+        navigate(`/app/${data.name}`)
+        dispatch(setcurrentGame(data));
     }
 
     return (
 
         <div  className='boxgame' onClick={handleClick} >
             <div className="imggame">
-                <img className='w-100' src={Data.image} alt="rasim"/>
+                <img className='w-100' src={data.imageUrl} alt="rasim"/>
             </div>
             <div className="textgame mb-2">
-                <h4 className='titlgame'>{Data.title}</h4>
+                <h4 className='titlgame'>{data.name}</h4>
                <div className="generbox">
-                   <p className='genergame'>{Data.gener}</p>
+                   <p className='genergame'>{data.gener}</p>
                </div>
-                <GameBuybtn Data={Data}/>
+                <GameBuybtn data={data}/>
             </div>
            </div>
     );

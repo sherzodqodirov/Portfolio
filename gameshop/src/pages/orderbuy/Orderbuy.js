@@ -17,8 +17,8 @@ if (items<1) return <h2 className='m-5 text-warning '>Корзина пусто 
             <hr/>
             <div className="texend d-flex align-items-center flex-wrap justify-content-between mb-4" >
                 <h6>Игры : {items.length}</h6>
-                <h6>Итогo : {totalPrice}$</h6>
-                <button className='btn btn-primary' onClick={handleClick}>оплатить</button>
+
+                <button className='btn btn-primary' onClick={handleClick}>ok</button>
             </div>
         </div>
     );
