@@ -4,15 +4,18 @@ import {BsFillPencilFill} from "react-icons/bs";
 import {TiDelete} from "react-icons/ti"
 import './addlistgame.css'
 import Loading from "../Loading/Loading";
+import Deletechage from "../deletchange/Deletechage";
 
 const Addlistgame = () => {
 
     const datgame = useSelector(state => state.gamesall.itemsgamesall);
 
 
-    if (!datgame) return <Loading/>
+    if (datgame==null) return <Loading/>
+    if (datgame.length===0) return <h1>No data</h1>
+
     return (
-        <>
+        <div className='addlist'>
             <h1 className='mt-5'>List games</h1>
 
             {datgame.map((item) => (
@@ -25,15 +28,11 @@ const Addlistgame = () => {
                         </div>
                         <h6 className='ms-5 mt-4'>{item.name}</h6>
                     </div>
-                    <div className="delchang d-flex ms-auto align-items-center">
-                        <h6 className='liscur'><BsFillPencilFill size='20px' color='#508AFF'/></h6>
-                        <h6 className='ms-5 liscur'><TiDelete size='30px' color='#FF4040'/></h6>
-                    </div>
-
+                   <Deletechage game={item} />
                 </div>
 
             ))}
-        </>
+        </div>
     );
 };
 

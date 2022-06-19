@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import axios from "axios";
 import {useDispatch} from 'react-redux';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
@@ -8,9 +9,8 @@ import Orderbuy from "./pages/orderbuy/Orderbuy";
 import Errorpage from "./pages/errorpage/Errorpage";
 import AdminPanel from "./admin/adminpanel/AdminPanel";
 import AdminLogin from "./admin/adminlogin/AdminLogin";
-import './App.css';
-import axios from "axios";
 import {allgames} from "./redux/getallgames/reducer";
+import './App.css';
 
 function App() {
 

@@ -1,11 +1,9 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import Listzakaz from "../../components/listzakaz/Listzakaz";
-import {deleteCart} from "../../redux/cart/reducer";
 
 const Orderbuy = () => {
     const items=useSelector(state => state.cart.itemsCarts);
-    const totalPrice = items.reduce((acc, game) => acc += game.price, 0)
     const handleClick = () => {
       alert('Сайт Разработке !')
     }

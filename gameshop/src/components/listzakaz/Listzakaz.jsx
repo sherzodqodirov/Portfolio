@@ -1,7 +1,7 @@
 import React from 'react';
-import './listzakaz.css';
 import {useDispatch} from "react-redux";
 import {deleteCart} from "../../redux/cart/reducer";
+import './listzakaz.css';
 
 const Listzakaz = ({games}) => {
     const dispatch=useDispatch()
@@ -13,7 +13,7 @@ const Listzakaz = ({games}) => {
             <div className="row p-0 m-0">
                 <div className="col-md-4 ">
                     <div className="imgame">
-                        <img className='w-100' src={games.image} alt={games.title}/>
+                        <img className='w-100' src={games.imageUrl} alt={games.title}/>
                     </div>
                 </div>
                 <div className="col-md-8 ">

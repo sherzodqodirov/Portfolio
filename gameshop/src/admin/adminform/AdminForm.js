@@ -69,16 +69,16 @@ const AdminForm = () => {
             </div>
             <div className="col-12">
                 <label htmlFor="inputAddress" className="form-label">Image url</label>
-                <input type="text" required className="form-control" id="inputAddress"/>
+                <input type="url" required className="form-control" id="inputAddress"/>
             </div>
             <div className="col-12">
                 <label htmlFor="inputAddress2" className="form-label">Video url</label>
-                <input type="text" required className="form-control" id="inputAddress2"
+                <input type="url" required className="form-control" id="inputAddress2"
                 />
             </div>
             <div className="col-12">
                 <label htmlFor="downloadU" className="form-label">Download url</label>
-                <input type="text" required className="form-control" id="downloadU"
+                <input type="url" required className="form-control" id="downloadU"
                 />
             </div>
             <div className="col-12">
