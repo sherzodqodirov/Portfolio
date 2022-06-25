@@ -17,7 +17,7 @@ const Carzina = () => {
     }
     let summoney = 0;
     let init = 0;
-    for (init = 0; init < totalP.length; init++) {
+    for (init; init < totalP.length; init++) {
         summoney += totalP[init];
     }
 
