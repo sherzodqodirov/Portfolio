@@ -1,25 +1,45 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {NavLink} from "react-router-dom";
+import {FcSearch} from "react-icons/fc"
+import {useDispatch, useSelector} from "react-redux";
+import {getcategry} from "../../redux/categoriySlice/reducer";
+import {getselectedproduct} from "../../redux/allproductSlice/reducer";
+import Searchproduct from "../searchproduct/Searchproduct";
 
 const Menu = () => {
+const [selval,setselval]=useState("")
+
+    const dispatch=useDispatch()
+const namecatg=useSelector(state => state.namecategory.category)
+
+     useEffect(()=>{
+         dispatch(getcategry())
+     },[dispatch])
+
+const handleval=(e)=>{
+    setselval(e.target.value)
+    dispatch(getselectedproduct(e.target.value))
+
+}
     return (
-        <nav className="navbar navbar-expand-lg bg-light p-3">
-            <div className="container-fluid">
+        <nav className=" menu position-fixed w-100 top-0  navbar navbar-expand-lg bg-light p-3">
+            <div className="container-fluid ">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <Link className="navbar-brand " to="/"><h3 className='m-0'>Hammol</h3></Link>
+
+                    <select className='ms-5' onChange={handleval} >
+                        <option value=" ">all product</option>
+                        {namecatg.map(option=>(
+                            <option key={option}  value={option}>{option}</option>
+                        ))}
+                    </select>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
-
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                   <Searchproduct/>
                 </div>
             </div>
         </nav>

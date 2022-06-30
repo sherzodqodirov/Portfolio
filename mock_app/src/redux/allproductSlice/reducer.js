@@ -6,25 +6,35 @@ export const getallproduct = createAsyncThunk(
     async () => {
         const res = await fetch("http://localhost:3001/api/product")
         const formatdata = await res.json()
-        return formatdata;
+        return formatdata.products;
     }
 )
 
-export const getcategry = createAsyncThunk(
-    "categoty/getcategry",
-    async () => {
-        const res = await fetch("http://localhost:3001/api/category")
-        const formatdata = await res.json()
-        return formatdata
+export const  getselectedproduct=createAsyncThunk(
+    "allproduct/ getselectedproduct",
+    async (valcategoriy)=>{
+        const res=await fetch(`http://localhost:3001/api/product?category=${valcategoriy}`)
+        const formatdata=await res.json()
+        return formatdata.products
+
     }
 )
 
-const apiSlise = createSlice({
+export const getsearch=createAsyncThunk(
+    "allproduct/getsearch",
+    async (searchval)=>{
+        const res=await fetch(`http://localhost:3001/api/product?name=${searchval}`)
+        const formatdata= await res.json()
+        return  formatdata.products
+
+    }
+)
+
+
+const allproductSlise = createSlice({
     name: 'product',
     initialState: {
         allproduct:[],
-        categoty: [],
-        selectedcatigory:[],
         isloading: false
     },
     extraReducers: {
@@ -40,18 +50,33 @@ const apiSlise = createSlice({
         },
 
 
-        [getcategry.pending]: (state) => {
+        [getselectedproduct.pending]: (state) => {
             state.isloading = true
         },
-        [getcategry.fulfilled]: (state, actions) => {
-            state.categoty = actions.payload
+        [getselectedproduct.fulfilled]: (state, actions) => {
+            state.allproduct = actions.payload
             state.isloading = false
         },
-        [getcategry.rejected]: (state, actions) => {
+        [getselectedproduct.rejected]: (state, actions) => {
             state.isloading = false
         },
+
+
+        [getsearch.pending]: (state) => {
+            state.isloading = true
+        },
+        [getsearch.fulfilled]: (state, actions) => {
+            state.allproduct = actions.payload
+            state.isloading = false
+        },
+        [getsearch.rejected]: (state, actions) => {
+            state.isloading = false
+        },
+
+
+
 
     }
 })
 
-export default apiSlise.reducer;
+export default allproductSlise.reducer;
