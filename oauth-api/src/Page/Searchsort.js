@@ -1,13 +1,12 @@
 import React, {useDeferredValue, useMemo, useState} from 'react';
-import {data} from "../data";
 
-const Searchsort = () => {
+const Searchsort = ({data}) => {
     const[value,setvalue]=useState('');
     const defferedValue=useDeferredValue(value);
-    const [items,setitems]=useState(data);
+
 
     const filtereditems=useMemo(()=>{
-        return items.filter(item=>item.name.toLowerCase().includes(defferedValue))
+        return data.filter(item=>item.name.toLowerCase().includes(defferedValue))
     },[defferedValue]);
 
     const onChangeValue=(e)=>{
@@ -15,18 +14,31 @@ const Searchsort = () => {
     }
 
     return (
-        <div className="text-center">
+        <div className="container text-center ">
             <input className="border-1 my-5 w-25 p-2 " type="text" value={value} onChange={onChangeValue} placeholder="search"/>
-
-            <div>
+            <table className="table  table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">size</th>
+                    <th scope="col">price</th>
+                </tr>
+                </thead>
+                <tbody>
                 {
-                    filtereditems.map(item=>(
-                        <div key={item.id}>
-                            <h6>{item.name}</h6>
-                        </div>
+                    filtereditems.map((item,idn)=>(
+                        <tr key={idn}>
+                            <td>{idn+1}</td>
+                            <td>{item.name}</td>
+                            <td>{item.properties[0].value}</td>
+                            <td>{item.importRecord.landedCostPrice.USD} $</td>
+                        </tr>
                     ))
                 }
-            </div>
+
+                </tbody>
+            </table>
         </div>
     );
 };

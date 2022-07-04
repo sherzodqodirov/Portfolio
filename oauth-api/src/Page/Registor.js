@@ -2,14 +2,14 @@ import React from "react";
 import axios from "axios";
 import {Form, Input, Button, message} from 'antd';
 import 'antd/dist/antd.css';
+
 const Register = ({setregist}) => {
 
-const [form]=Form.useForm()
-
+    const [form] = Form.useForm()
 
 
     const onFinish = (values) => {
-        console.log(values);
+
         let data = new FormData();
         for (const [key, value] of Object.entries(values)) {
             data.append(key, value);
@@ -17,21 +17,21 @@ const [form]=Form.useForm()
 
         axios({
             method: "post",
-            url:` https://${values._subdomain}.ox-sys.com/security/auth_check`,
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        data: data,
-    })
-    .then((res) => {
-            console.log("succes👍", 'token:', res.data);
-            localStorage.setItem('token', res.data.token);
-            setregist(true)
-            form.resetFields();
+            url: ` https://${values._subdomain}.ox-sys.com/security/auth_check`,
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            data: data,
         })
+            .then((res) => {
+
+                localStorage.setItem('token', res.data.token);
+                form.resetFields();
+                setregist(true)
+            })
             .catch((err) => {
-                message.error("not entred login"+err.message);
+                message.error("not entred login" + err.message);
             });
     };
 
@@ -43,7 +43,7 @@ const [form]=Form.useForm()
         <div className="container text-center">
             <Form
                 form={form}
-                style={{width:"600px",margin:"80px auto"}}
+                style={{width: "600px", margin: "80px auto"}}
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
             >
@@ -57,7 +57,7 @@ const [form]=Form.useForm()
                         },
                     ]}
                 >
-                    <Input />
+                    <Input/>
                 </Form.Item>
 
                 <Form.Item
@@ -70,9 +70,9 @@ const [form]=Form.useForm()
                         },
                     ]}
                 >
-                    <Input.Password />
+                    <Input.Password/>
                 </Form.Item>
-                   <Form.Item
+                <Form.Item
                     label="Company"
                     name="_subdomain"
                     rules={[

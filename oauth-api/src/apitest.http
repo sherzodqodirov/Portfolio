@@ -1,0 +1,13 @@
+###
+
+# curl --location --request GET 'https://face.ox-sys.com/variations'
+#--header 'Authorization: Bearer {{token_here}}'
+#--header 'Content-Type: application/json'
+#--header 'Accept: application/json' \
+GET https://face.ox-sys.com/variations
+Authorization: Bearer {{token_here}}
+Accept: application/json
+Content-Type: application/json
+
+###
+

@@ -7,20 +7,25 @@ import Searchsort from "./Page/Searchsort";
 
 function App() {
     const [regist, setregist] = useState(false);
+    const [data, setdata] = useState([])
 
-    useEffect(()=>{
+
+    useEffect(() => {
         localStorage.getItem('token') &&
-            setregist(localStorage.getItem('token'))
-    },[])
+        setregist(localStorage.getItem('token'));
+
+    }, [])
+
+
 
     return (
         <BrowserRouter>
-            <Navbar/>
-            {regist?(<Routes>
-                <Route path="/" element={<Home/> }/>
-                <Route path="/search" element={<Searchsort/>}/>
+            <Navbar regist={regist}/>
+            {regist ? (<Routes>
+                <Route path="/" element={<Home data={data} setdata={setdata} />}/>
+                <Route path="/search" element={<Searchsort data={data}/>}/>
 
-            </Routes>):(
+            </Routes>) : (
                 <Register setregist={setregist}/>
             )}
 
