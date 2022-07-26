@@ -1,19 +1,18 @@
-import React, {useDeferredValue, useMemo, useState} from 'react';
+import React, { useMemo, useState} from 'react';
 
 const Searchsort = ({data}) => {
     const [value, setvalue] = useState('');
-    const defferedValue = useDeferredValue(value);
-
 
     const filtereditems = useMemo(() => {
-        return data.filter(item => item.name.toLowerCase().includes(defferedValue))
-    }, [defferedValue]);
+        return data.filter(item => item.name.toLowerCase().includes(value))
+    }, [value]);
 
     const onChangeValue = (e) => {
         setvalue(e.target.value);
     }
 
-    return (<div className="container text-center ">
+    return (
+        <div className="container text-center ">
         <input className="border-1 my-5 w-25 p-2 " type="text" value={value} onChange={onChangeValue}
                placeholder="search"/>
         <table className="table  table-hover">
@@ -26,7 +25,7 @@ const Searchsort = ({data}) => {
             </tr>
             </thead>
             <tbody>
-            {filtereditems.sort((itemA, itemB) => new Intl.Collator().compare(itemA.name[0], itemB.name[0])).map((item, idn) => (
+            {filtereditems.map((item, idn) => (
                 <tr key={idn}>
                     <td>{idn + 1}</td>
                     <td>{item.name}</td>
