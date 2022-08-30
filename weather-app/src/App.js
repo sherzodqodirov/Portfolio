@@ -1,6 +1,5 @@
 import React from "react";
 import {getweather} from "./redux/weatherSlice/reducer";
-import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import Location from "./components/location/Location";
 import Bottomin from "./components/bottomin/Bottomin";
