@@ -17,6 +17,7 @@ const categorcarSlice = createSlice({
   name: "categor",
   initialState: {
     categorcar: [],
+    total:null,
     isloading: false,
     error:null,
   },
@@ -26,7 +27,8 @@ const categorcarSlice = createSlice({
         state.error=null;
     },
     [getmarkapaging.fulfilled]: (state, actions) => {
-        state.categorcar = actions.payload;
+        state.categorcar = actions.payload.data;
+        state.total = actions.payload.total;
         state.isloading = false;
         state.error=null;
     },
