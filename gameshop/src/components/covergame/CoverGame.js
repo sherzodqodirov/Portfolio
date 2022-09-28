@@ -10,6 +10,7 @@ const CoverGame = ({data}) => {
     const navigate=useNavigate()
     const {title}=useParams()
     const dispatch=useDispatch()
+    
     const handleClick = () => {
         navigate(`/app/${data.name}`)
         dispatch(setcurrentGame(data));

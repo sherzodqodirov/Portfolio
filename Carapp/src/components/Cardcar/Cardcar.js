@@ -1,8 +1,25 @@
-import React from 'react'
+import React from "react";
+import "./cardcar.scss";
+const Cardcar = ({ datacategor }) => {
 
-const Cardcar = ({categorcar}) => { 
+  const handleclick=()=>{
+    console.log(datacategor);
+  }
+  return (
+        
+   <div className="card  card1 border-0" onClick={handleclick}>
+    <div className="card-header p-0 overflow-hidden rounded">
+    <img
+      className="w-100 img-fluid"
+      src={`https://cartestwebapp.herokuapp.com/${datacategor.imgUrl}`}
+      alt="img"
+    />
+    </div>
+    <div className="card-body ">
+       <h4>{datacategor.name}</h4> 
+    </div>   
+   </div>
+  
+)};
 
-    return categorcar.map((item, idn) => <img className='w-25' key={idn} src={`https://cartestwebapp.herokuapp.com/${item.imgUrl}`} alt="img"/>)
-}
-
-export default Cardcar
+export default Cardcar;

@@ -11,6 +11,7 @@ const Home = () => {
   const isloading = useSelector((state) => state.categor.isloading);
   const categorcar = useSelector((state) => state.categor.categorcar);
   const error = useSelector((state) => state.categor.error);
+
   useEffect(() => {
     dispatch(getmarkapaging(pnum));
   }, [pnum]);
@@ -18,13 +19,18 @@ const Home = () => {
   return (
     <div className="container">
       <h6>Bosh sahifa &gt; modellari</h6>
+      <h1 className="mb-5">Modellari</h1>
       {isloading ? (
-       <Loading/>
+        <Loading />
       ) : error !== null ? (
         <h4>{error}</h4>
       ) : (
-       <Cardcar categorcar={categorcar}/>
-       )}
+        <div className=" d-flex justify-content-between flex-wrap align-items-center text-center">
+          {categorcar.map((datacategor, idn) => (
+            <Cardcar datacategor={datacategor} key={idn} />
+          ))}
+        </div>
+      )}
       <Paging pnum={pnum} setpnum={setpnum} />
     </div>
   );
