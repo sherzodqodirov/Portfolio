@@ -1,18 +1,23 @@
 import React from "react";
 import { Formik } from "formik";
 import "./login.scss";
+import axios from "axios";
 
 const Login = () => {
   return (
     <div className="container">
       <Formik
-        initialValues={{ number: "", password: "" }}
+        initialValues={{ phoneNumber: "", password: "" }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-             console.log(values);
+            axios.post("https://cartestwebapp.herokuapp.com/employee/login",values)
+            .then(res=>localStorage.setItem('token',res.data.data.token))
+            .catch(er=>console.log(er.message))
             setSubmitting(false);
           }, 400);
+         
         }}
+        
       >
         {({
           values,
@@ -30,15 +35,15 @@ const Login = () => {
             <div className="mt-5 mb-4">
               <input
                 required
-                type="number"
-                name="number"
+                type="text"
+                name="phoneNumber"
                 placeholder="phone number"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.number}
+                value={values.phoneNumber}
                 className="inputfrom"
               />
-              {errors.number && touched.number && errors.number}
+              {errors.phoneNumber && touched.phoneNumber && errors.phoneNumber}
             </div>
             <div className=" mb-4">
               <input
