@@ -1,30 +1,39 @@
-import React, { lazy, Suspense } from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import './App.scss';
-import Loading from './components/Loading/Loading';
+import React, { lazy, Suspense, useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.scss";
+import Loading from "./components/Loading/Loading";
+import Layout2 from "./pages/Layout2";
 
-const Home=lazy(()=>import('./pages/Home/Home'))
-const Layout=lazy(()=>import('./pages/Layout'))
-const Login=lazy(()=>import('./pages/Login/Login'))
+const Home = lazy(() => import("./pages/Home/Home"));
+const Layout = lazy(() => import("./pages/Layout"));
+const Login = lazy(() => import("./pages/Login/Login"));
+const Errorpage=lazy(()=>import("./pages/Errorpage/Errorpage"));
 
 function App() {
+  const [token, settoken] = useState(false);
+
+  useEffect(() => {
+    localStorage.getItem("token") && settoken(localStorage.getItem("token"));
+  }, []);
 
   return (
     <BrowserRouter>
-    <Suspense fallback={<Loading/>}>
-    <Routes>
-      <Route path='/login' element={<Login/>}/>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-      </Route>
-    </Routes>
-    </Suspense>
-  </BrowserRouter>
-  )
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          {token ? (
+             <Route path="/coreadmin" element={<Layout2 />}></Route>
+          ) : (
+            <Route path="/login" element={<Login settoken={settoken}/>} />
+          )}
+
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+          </Route>
+          <Route path="*" element={<Errorpage/>}/>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  );
 }
 
 export default App;

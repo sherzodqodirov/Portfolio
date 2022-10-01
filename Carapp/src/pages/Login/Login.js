@@ -2,22 +2,30 @@ import React from "react";
 import { Formik } from "formik";
 import "./login.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({settoken}) => {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <Formik
         initialValues={{ phoneNumber: "", password: "" }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            axios.post("https://cartestwebapp.herokuapp.com/employee/login",values)
-            .then(res=>localStorage.setItem('token',res.data.data.token))
-            .catch(er=>console.log(er.message))
+            axios
+              .post(
+                "https://cartestwebapp.herokuapp.com/employee/login",
+                values
+              )
+              .then((res) => {
+                localStorage.setItem("token", res.data.data.token);
+                settoken(true)
+                navigate("/coreadmin");
+              })
+              .catch((er) => console.log(er.message));
             setSubmitting(false);
           }, 400);
-         
         }}
-        
       >
         {({
           values,
@@ -28,10 +36,7 @@ const Login = () => {
           handleSubmit,
           isSubmitting,
         }) => (
-          <form
-            onSubmit={handleSubmit}
-            className="text-center mt-5"
-          >
+          <form onSubmit={handleSubmit} className="text-center mt-5">
             <div className="mt-5 mb-4">
               <input
                 required
