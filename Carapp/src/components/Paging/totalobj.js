@@ -1,4 +1,3 @@
-
 export const totalobj = (total) => {
   let resuld;
   if (total % 6 === 0) {
@@ -6,5 +5,5 @@ export const totalobj = (total) => {
   } else {
     resuld = Math.floor(total / 6) + 1;
   }
-  return resuld
+  return resuld;
 };
