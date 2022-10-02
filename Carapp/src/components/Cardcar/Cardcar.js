@@ -1,10 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./cardcar.scss";
+
 const Cardcar = ({ datacategor }) => {
+const navigate=useNavigate()
 
   const handleclick=()=>{
-    console.log(datacategor);
+    navigate(`category/${datacategor._id}`)
   }
+
   return (
         
    <div className="card  card1 border-0" onClick={handleclick}>

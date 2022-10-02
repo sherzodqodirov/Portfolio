@@ -4,7 +4,7 @@ export const getmarkapaging = createAsyncThunk(
   "categorcar/getmarkapaging",
   async (num,{rejectWithValue})=> {
     try {
-      const res = await axios.get(`https://cartestwebapp.herokuapp.com/category/marka?limit=6&page=${num}`);
+      const res = await axios.get(`https://cartestwebapp.herokuapp.com/category/marka?limit=5&page=${num}`);
       return res.data.data
     } catch (error) {
       return rejectWithValue(error.message)
