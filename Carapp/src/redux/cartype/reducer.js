@@ -6,9 +6,9 @@ export const getbyidcar = createAsyncThunk(
   async (idcar, { rejectWithValue }) => {
     try {
       const res = await axios.get(
-        `https://cartestwebapp.herokuapp.com/category/${idcar}`
+        `https://cartestwebapp.herokuapp.com/car?limit=30&page=${idcar}`
       );
-      return res.data;
+      return await res.data.data.data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -18,7 +18,7 @@ export const getbyidcar = createAsyncThunk(
 const cartypeSlice = createSlice({
   name: "cartype",
   initialState: {
-    cartype: [],
+    cartypedata: [],
     isloading: false,
     error: null,
   },
@@ -27,7 +27,7 @@ const cartypeSlice = createSlice({
       state.isloading = true;
     },
     [getbyidcar.fulfilled]: (state, actions) => {
-      state.cartype = actions.payload;
+      state.cartypedata = actions.payload;
       state.isloading = false;
     },
     [getbyidcar.rejected]: (state, actions) => {

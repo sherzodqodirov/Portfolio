@@ -6,7 +6,7 @@ const Cardcar = ({ datacategor }) => {
   const navigate = useNavigate();
 
   const handleclick = () => {
-    navigate(`category/${datacategor._id}`);
+    navigate(`category/cars`);
   };
 
   return (

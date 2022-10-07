@@ -4,8 +4,10 @@ import Loading from "./components/Loading/Loading";
 import Layout2 from "./pages/Layout2";
 import "./App.scss";
 
+
 const Home = lazy(() => import("./pages/Home/Home"));
 const Cartype = lazy(() => import("./pages/Cartype/Cartype"));
+const Carinfo = lazy(() => import("./pages/carinfo/Carinfo"));
 const Layout = lazy(() => import("./pages/Layout"));
 const Login = lazy(() => import("./pages/Login/Login"));
 const Errorpage = lazy(() => import("./pages/Errorpage/Errorpage"));
@@ -29,7 +31,8 @@ function App() {
 
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="category/:carid" element={<Cartype />} />
+            <Route path="category/cars" element={<Cartype />} />
+            <Route path="category/cars/:carid" element={<Carinfo/>} />
           </Route>
           <Route path="*" element={<Errorpage />} />
         </Routes>
