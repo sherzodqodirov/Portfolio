@@ -28,13 +28,15 @@ function App() {
           ) : (
             <Route path="/login" element={<Login settoken={settoken} />} />
           )}
-
+          
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="category/cars" element={<Cartype />} />
             <Route path="category/cars/:carid" element={<Carinfo/>} />
           </Route>
+
           <Route path="*" element={<Errorpage />} />
+
         </Routes>
       </Suspense>
     </BrowserRouter>
