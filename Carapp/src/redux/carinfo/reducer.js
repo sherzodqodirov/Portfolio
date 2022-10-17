@@ -21,7 +21,7 @@ const carinfoSlice=createSlice({
         error:null
     },
     extraReducers:{
-        [getcarinfo.panding]:(state)=>{
+        [getcarinfo.pending]:(state)=>{
             state.isloading=true;
         },
         [getcarinfo.fulfilled]: (state,actions) => {
