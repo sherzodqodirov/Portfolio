@@ -1,0 +1,98 @@
+.containercore{
+  margin: 0 15.3px;
+}
+.logo {
+  width: 137px;
+  height: 60px;
+  margin-right: 20px;
+}
+.nav-item{
+  position: relative;
+  .dotsvertical{
+   position: absolute;
+    padding: 30px 20px 10px;
+    z-index: 10;
+    width: 500px;
+    height: 300px;
+    right: -800%;
+    border-radius: 6px;
+    border: 1px solid #f3f3f3;
+    .nav-inp{
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #d0d0d0;
+      border-radius: 5px;
+      outline-color: #d3d2d2;
+    }
+  }
+  .nav-link {
+    cursor: pointer;
+    font-size: 17px;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing:-.02em;
+    font-weight: 600;
+    color: #282828;
+    text-transform: none;
+
+
+
+    span {
+      position: relative;
+      text-decoration: none; /* For Example */
+      background-image: linear-gradient(#ff184e, #ff184e);
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      background-size: 0 3px;
+      transition: background-size .2s;
+    }
+
+    span:hover {
+      background-size: 100% 3px;
+    }
+
+
+
+  }
+
+}
+.notif{
+  cursor: pointer;
+}
+.search{
+  border-right:1px solid silver ;
+}
+
+
+.notifa{
+  position: absolute;
+  padding: 15px;
+  top: 110%;
+  right: 20%;
+  z-index: 10;
+  width: 360px;
+  height: 230px;
+  border-radius: 6px;
+  border: 1px solid #f3f3f3;
+}
+:before :after{
+  box-sizing: border-box;
+}
+
+.fire{
+  border-radius: 5px;
+  padding:0 10px;
+  background-color: #FFFFFF;
+}
+
+.h6nav{
+  cursor: pointer;
+  border-radius: 3px;
+  padding:4px 7px;
+  background-color: #88888812;
+  color: #000000;
+  &:hover{
+    background-color: #d9534f;
+    color: #FFFFFF;
+  }
+}
