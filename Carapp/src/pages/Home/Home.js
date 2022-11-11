@@ -8,7 +8,8 @@ import Cardcar from "../../components/Cardcar/Cardcar";
 const Home = () => {
   const dispatch = useDispatch();
   const [pnum, setpnum] = useState(1);
-  const isloading = useSelector((state) => state.categor.isloading);
+    const total = useSelector((state) => state.categor.total);
+    const isloading = useSelector((state) => state.categor.isloading);
   const categorcar = useSelector((state) => state.categor.categorcar);
   const error = useSelector((state) => state.categor.error);
 
@@ -31,7 +32,7 @@ const Home = () => {
           ))}
         </div>
       )}
-      <Paging pnum={pnum} setpnum={setpnum} />
+      <Paging pnum={pnum} setpnum={setpnum} total={total}/>
     </div>
   );
 };

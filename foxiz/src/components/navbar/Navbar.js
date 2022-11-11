@@ -25,8 +25,8 @@ const Navbar = () => {
     }
     return (
         <>
-            <div className="containercore">
-                <nav className="navbar navbar-expand-lg py-0 ">
+            <div className="containercore ">
+                <nav className="navbar navbar-expand-lg py-0 border  ">
                     <div className="container-fluid ">
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
@@ -64,7 +64,7 @@ const Navbar = () => {
                                     <div className="nav-link " onClick={handleclick1}><BsThreeDotsVertical
                                         className={dotstogle ? "text-danger " : null}/></div>
                                     {dotstogle ? (
-                                        <div className="dotsvertical">
+                                        <div className="dotsvertical bg-light">
                                             <h6>Search</h6>
                                             <input className='nav-inp' type="text" placeholder='Search'/>
                                         </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
                             <div className="notif ms-3" onClick={handleclick2}><IoIosNotificationsOutline size='28px'/>
                             </div>
                             {notifa ? (
-                                <div className="notifa">
+                                <div className="notifa bg-light">
                                     <h6>Notification</h6>
                                     <h6>no data</h6>
                                 </div>

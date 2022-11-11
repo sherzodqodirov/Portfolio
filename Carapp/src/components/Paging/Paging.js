@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 import "./paging.scss";
 import { totalobj } from "./totalobj";
 
-const Paging = ({ pnum, setpnum }) => {
-  const total = useSelector((state) => state.categor.total);
+const Paging = ({ pnum, setpnum,total }) => {
 
   const handledecr = () => {
     pnum > 1 && setpnum(pnum - 1);

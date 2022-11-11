@@ -1,67 +1,108 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState,useMemo} from 'react';
+import { useTable, usePagination } from 'react-table';
+import {COLUMNS} from "../components/columns";
+import "./../table.css";
 import axios from "axios";
 
-const Home = ({data,setdata}) => {
-    const [itm, setitm] = useState(10)
-    const minidata = []
+const Home = ({data}) => {
+    const columns = useMemo(() => COLUMNS, [])
 
-    const handleclick = () => {
-        itm<100 ? setitm(itm + 10) : setitm(10)
-    }
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        page,
+        nextPage,
+        previousPage,
+        canPreviousPage,
+        canNextPage,
+        pageOptions,
+        state,
+        gotoPage,
+        pageCount,
+        setPageSize,
+        prepareRow
+    } = useTable(
+        {
+            columns,
+            data,
+            initialState: { pageIndex: 0 }
+        },
+        usePagination
+    )
+    const { pageIndex, pageSize } = state
 
 
 
-    useEffect(() => {
-        axios.request({
-            method: 'GET',
-            url: 'https://toko.ox-sys.com/variations',
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-            }
-        })
-            .then(response => {
-                setdata(response.data.items)
-            }).catch(error => {
-            console.error(error);
-        });
-
-    }, [])
-
-    if (data[0] && itm <= 100) {
-        for (let i = 0; i < itm; i++) {
-            minidata.push(data[i])
-        }
-    }
-
-    if (!minidata[0]) return <h5 className='text-center m-5'>Loading...</h5>
-    return (<div className="container text-center mt-5">
-        <table className="table  table-hover">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">name</th>
-                <th scope="col">size</th>
-                <th scope="col">price</th>
-            </tr>
-            </thead>
-            <tbody>
-            {minidata.map((item, idn) => (
-                <tr key={idn}>
-                    <td>{idn+1}</td>
-                    <td>{item.name}</td>
-                    <td>{item.properties[0].value}</td>
-                    <td>{item.importRecord.landedCostPrice.USD} $</td>
-                </tr>
-            ))}
-
-            </tbody>
-        </table>
-        <button className=' btn btn-primary m-4 px-5' onClick={handleclick}>
-            {itm===100 ? "back":"viwe more"}
-        </button>
-    </div>);
+    return (
+        <div className='container mt-5'>
+            <table {...getTableProps()}>
+                <thead>
+                {headerGroups.map(headerGroup => (
+                    <tr {...headerGroup.getHeaderGroupProps()}>
+                        {headerGroup.headers.map(column => (
+                            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                        ))}
+                    </tr>
+                ))}
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                {page.map(row => {
+                    prepareRow(row)
+                    return (
+                        <tr {...row.getRowProps()}>
+                            {row.cells.map(cell => {
+                                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                            })}
+                        </tr>
+                    )
+                })}
+                </tbody>
+            </table>
+            <div>
+                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+                    {'<<'}
+                </button>{' '}
+                <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+                    Previous
+                </button>{' '}
+                <button onClick={() => nextPage()} disabled={!canNextPage}>
+                    Next
+                </button>{' '}
+                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+                    {'>>'}
+                </button>{' '}
+                <span>
+          Page{' '}
+                    <strong>
+            {pageIndex + 1} of {pageOptions.length}
+          </strong>{' '}
+        </span>
+                <span>
+          | Go to page:{' '}
+                    <input
+                        type='number'
+                        defaultValue={pageIndex + 1}
+                        onChange={e => {
+                            const pageNumber = e.target.value ? Number(e.target.value) - 1 : 0
+                            gotoPage(pageNumber)
+                        }}
+                        style={{ width: '50px' }}
+                    />
+        </span>{' '}
+                <select
+                    value={pageSize}
+                    onChange={e => setPageSize(Number(e.target.value))}>
+                    {[10, 25, 50].map(pageSize => (
+                        <option key={pageSize} value={pageSize}>
+                            Show {pageSize}
+                        </option>
+                    ))}
+                </select>
+            </div>
+        </div>
+    )
 };
 
 export default Home;
+
