@@ -6,11 +6,11 @@ const Logoaut = () => {
         console.log("Logout success")
     }
     return (
-        <div>
-       <GoogleLogout
+        
+       <GoogleLogout className='ms-3'
            clientId={clientId}
        onLogoutSuccess={onSuccess}/>
-        </div>
+        
     );
 };
 

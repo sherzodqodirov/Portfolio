@@ -9,15 +9,15 @@ const Login = ({googlevar}) => {
         console.log("Login failed",res.profileObj)
     }
     return (
-        <div>
-            <GoogleLogin
+        
+            <GoogleLogin className='me-3'
                 clientId={clientId}
                 buttonText="Login"
                 onSuccess={onSuccess}
                 onFailure={onFailure}
                 cookiePolicy={'single_host_origin'}
             />
-        </div>
+        
     );
 };
 

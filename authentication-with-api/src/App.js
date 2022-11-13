@@ -10,24 +10,6 @@ const NotFount=lazy(()=>import("./NotFound/NotFount"))
 function App() {
 const [user,setUser]=useState("")
 
-//     const fetchEmails = async () => {
-//         const headers = {
-//             'Content-Type': 'application/x-www-form-urlencoded',
-//              'Accept': 'application/json',
-//             '_username':'user_task&_password=user_task&_subdomain=toko'
-//
-//         };
-//       const response=await axios.post('https://toko.ox-sys.com/security/auth_check\n',{headers})
-//         const data=await response.data
-//         console.log(data)
-//     }
-//     // Username: user_task
-//     // Password: user_task
-//     // Subdomain: toko
-//
-// useEffect(()=>{
-//     fetchEmails()
-// },[])
 
 const inputValue=(val)=>{
     console.log(val)
