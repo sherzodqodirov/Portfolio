@@ -8,6 +8,7 @@ body{
 }
 .btn{
     padding: 0.5rem 1rem;
+    border-radius: 5px;
    
 }
 .btn-dark{
@@ -16,8 +17,7 @@ body{
     cursor: pointer;
 }
 .btn-dark:hover{
-    background-color: #ffff;
-    color: #000;
+    background-color: rgba(255, 0, 0, 0.678);
 }
 .btn-success{
     background-color: #008000;
