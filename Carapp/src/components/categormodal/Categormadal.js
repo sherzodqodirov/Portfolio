@@ -34,7 +34,8 @@ const Categormadal = () => {
                                     name="marka"
                                     onChange={formik.handleChange}
                                     value={formik.values.marka}
-                                    className='w-100' id='marka'
+                                    className='w-100'
+                                    id='marka'
                                     type="text"
                                     placeholder=' Kiriting'/>
                             </div>

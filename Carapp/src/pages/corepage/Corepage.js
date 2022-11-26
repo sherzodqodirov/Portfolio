@@ -5,7 +5,8 @@ import {HiOutlineArrowRight} from "react-icons/hi"
 import "./corepage.scss"
 import Loading from "../../components/Loading/Loading";
 import Paging from "../../components/Paging/Paging";
-import Categormadal from "../../components/catedormodal/Categormadal";
+import Categormadal from "../../components/categormodal/Categormadal";
+import Addcarmodal from "../../components/addcarmodal/Addcarmodal";
 
 const Corepage = () => {
     const dispatch = useDispatch()
@@ -23,9 +24,10 @@ const Corepage = () => {
                 <h4>Mashinalr</h4>
                 <div className="addcar">
                     <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Kategoriya qo’shish</button>
-                    <button className='btn btn-primary ms-5'>+ Mashina qo‘shish</button>
+                    <button className='btn btn-primary ms-5' data-bs-toggle="modal" data-bs-target="#staticBackdrop2">+ Mashina qo‘shish</button>
                 </div>
                 <Categormadal/>
+                <Addcarmodal/>
             </div>
             {
                 isloading ? (
