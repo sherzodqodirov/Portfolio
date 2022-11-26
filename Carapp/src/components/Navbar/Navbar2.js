@@ -5,8 +5,10 @@ import {ImExit} from "react-icons/im";
 import {AiTwotoneHome} from 'react-icons/ai';
 import {BsShop} from 'react-icons/bs';
 import {RiQuestionAnswerLine} from 'react-icons/ri';
+import {AiOutlineUserAdd} from 'react-icons/ai'
 import rimg from "../../images/Right block.png"
 import './navbar.scss';
+import Addadminmodal from "../adminaddmodal/Addadminmodal";
 
 const Navbar2 = ({settoken}) => {
     const navigate = useNavigate()
@@ -24,9 +26,11 @@ const Navbar2 = ({settoken}) => {
                             size="20px"/>
                             <h6 className='m-0 ms-2'>Asosiyga qaytish</h6>
                         </Link>
-
+                        <button className="btn btn-success d-flex align-items-center py-2"  data-bs-toggle="modal" data-bs-target="#exampleModal"><AiOutlineUserAdd
+                            size='20px'/><h6 className='m-0 ms-2'>Admin qoshish</h6></button>
+                        <Addadminmodal/>
                         <Link onClick={handleclick} to='/login'
-                              className="btn btn-primary d-flex align-items-center py-2">
+                              className="btn btn-danger d-flex align-items-center py-2">
                             <h6 className='m-0 me-2'>Adminlikdan chiqish</h6>
                             <ImExit size="20px"/>
                         </Link>

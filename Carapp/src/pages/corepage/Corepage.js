@@ -5,6 +5,7 @@ import {HiOutlineArrowRight} from "react-icons/hi"
 import "./corepage.scss"
 import Loading from "../../components/Loading/Loading";
 import Paging from "../../components/Paging/Paging";
+import Categormadal from "../../components/catedormodal/Categormadal";
 
 const Corepage = () => {
     const dispatch = useDispatch()
@@ -21,9 +22,10 @@ const Corepage = () => {
             <div className="contcore d-flex justify-content-between align-items-center">
                 <h4>Mashinalr</h4>
                 <div className="addcar">
-                    <button className='btn btn-primary'>+ Kategoriya qo’shish</button>
+                    <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Kategoriya qo’shish</button>
                     <button className='btn btn-primary ms-5'>+ Mashina qo‘shish</button>
                 </div>
+                <Categormadal/>
             </div>
             {
                 isloading ? (
