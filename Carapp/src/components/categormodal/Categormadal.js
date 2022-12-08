@@ -5,16 +5,16 @@ const Categormadal = () => {
 
 
     const formik=useFormik({
+        
         initialValues:{
             marka:"",
-            fileimg:"Yuklash"
+            file:null,
         },
         onSubmit: values => {
             console.log(values);
             formik.resetForm();
         },
     })
-
     return (
         <div className="modal " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1"
              aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -44,15 +44,15 @@ const Categormadal = () => {
                                     <h6 className='filtext'>Rasm 360 ichki makon</h6>
                                     <input
                                         required
-                                        onChange={e=>formik.setFieldValue("fileimg",e.target.files[0].name)}
-                                        name="fileimg" type="file" id="input__file"
+                                        onChange={e=> formik.setFieldValue("file",e.target.files[0])}
+                                        name="file" type="file" id="file"
                                         className="input input__file"
                                         accept=".jpg, .jpeg, .png"
                                         multiple />
-                                        <label htmlFor="input__file" className="input__file-button">
+                                        <label htmlFor="file" className="input__file-button">
                                             <span className="input__file-icon-wrapper">
                                                 <FiCamera size='20px'/></span>
-                                            <span >{formik.values.fileimg}</span>
+                                            <span >{formik.values.file==null? "Yuklash":formik.values.file.name}</span>
                                         </label>
                                 </div>
                             </div>

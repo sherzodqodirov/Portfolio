@@ -7,6 +7,7 @@ import Loading from "../../components/Loading/Loading";
 import Paging from "../../components/Paging/Paging";
 import Categormadal from "../../components/categormodal/Categormadal";
 import Addcarmodal from "../../components/addcarmodal/Addcarmodal";
+import {AiFillDelete} from "react-icons/ai"
 
 const Corepage = () => {
     const dispatch = useDispatch()
@@ -47,7 +48,7 @@ const Corepage = () => {
                                 <th scope="col">Year</th>
                                 <th scope="col">Color</th>
                                 <th scope="col">Distance</th>
-                                <th scope="col"></th>
+                                <th scope="col"><AiFillDelete size={'20px'}/></th>
                             </tr>
                             </thead>
                             <tbody>

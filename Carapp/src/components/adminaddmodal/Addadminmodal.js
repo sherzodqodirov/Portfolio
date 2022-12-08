@@ -5,9 +5,10 @@ const Addadminmodal = () => {
 
     const formik = useFormik({
         initialValues: {
+            fullname:'',
             phonenum: '',
             password: '',
-            roleid: '',
+            roleid: '631836e3e171de6c5c96186f',
         },
         onSubmit: values => {
             console.log(values);
@@ -26,6 +27,16 @@ const Addadminmodal = () => {
 
                     <form onSubmit={formik.handleSubmit}>
                         <div className="modal-body">
+
+                            <input
+                                id='fullname'
+                                type="text"
+                                required
+                                placeholder='Full Name'
+                                onChange={formik.handleChange}
+                                value={formik.values.fullname}
+                                className='d-block rounded-1 border-danger'/>
+
                             <input
                                 id='phonenum'
                                 type="number"
@@ -33,7 +44,8 @@ const Addadminmodal = () => {
                                 placeholder='phone number'
                                 onChange={formik.handleChange}
                                 value={formik.values.phonenum}
-                                className='d-block rounded-1 border-dark'/>
+                                className='d-block mt-3 rounded-1 border-danger'/>
+
                             <input
                                 id='password'
                                 type="password"
@@ -41,15 +53,7 @@ const Addadminmodal = () => {
                                 onChange={formik.handleChange}
                                 value={formik.values.password}
                                 required
-                                className='d-block mt-3 rounded-1 border-dark'/>
-                        <input
-                                id='roleid'
-                                type="text"
-                                placeholder='roleid'
-                                onChange={formik.handleChange}
-                                value={formik.values.roleid}
-                                required
-                                className='d-block mt-3 rounded-1 border-dark'/>
+                                className='d-block mt-3 rounded-1 border-danger'/>
                         </div>
                         <div className="modal-footer">
                             <button type="submit" className="btn btn-success">Send</button>

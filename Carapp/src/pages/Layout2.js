@@ -9,6 +9,7 @@ const Layout2 = ({settoken}) => {
   return (
     <>
       <Navbar2 settoken={settoken}/>
+      
      <div className='container-fluid'>
          <div className="row">
              <div className="col-2 ps-4">
