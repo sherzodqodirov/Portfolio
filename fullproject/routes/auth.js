@@ -1,24 +1,9 @@
-const {Router}=require("express")
-const User=require('../models/User')
+import {Router} from "express";
+import User from '../models/User.js';
+import {registration, login ,getme} from '../controllers/auth.js'
+const router= new Router()
 
-const router=Router()
-
-router.post('/api/registration',async (req,res)=>{
-    try {
-        const {email, password}=req.body
-        const isUsed= await User.findOne({email})
-
-        if (isUsed){
-            return res.status(300).json({message:"Данный Email уже занят"})
-        }
-
-        const user=new User({ email,password})
-        await user.save()
-
-        res.status(201).json({message:"Пользовател создан"})
-
-    } catch (e) {
-        console.log(e)
-    }
-})
-module.exports=router;
+router.post('/registration',registration)
+router.post('/login',login)
+router.get('/me',getme)
+export default router;
