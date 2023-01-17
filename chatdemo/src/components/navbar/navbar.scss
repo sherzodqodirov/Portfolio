@@ -1,0 +1,46 @@
+.navbar {
+  .navlogo {
+    width: 96px;
+    height: 46px;
+  }
+
+  .formsearch {
+    .searchinp {
+      width: 530px;
+      padding: 11px 23px;
+      background: #F9F9F9;
+      border-radius: 8px 0 0 8px;
+      border: none;
+      outline: none;
+    }
+
+    .btnsearch {
+      padding-right: 15px;
+      background: #F9F9F9;
+      border-radius: 0 8px 8px 0;
+      border: none;
+    }
+  }
+
+  .subuser {
+    .subtracticon {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      &:hover{
+        transform: scale(1.1);
+      }
+      transition: .1s ;
+    }
+
+    .usericon {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      &:hover{
+        transform: scale(1.08);
+      }
+      transition: .1s ;
+    }
+  }
+}
