@@ -1,25 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './authpage.scss'
-import {Link} from "react-router-dom";
-import axios from "axios";
-const RegistryPage = () => {
+import {useDispatch, useSelector} from "react-redux"
+import {Link, useNavigate} from "react-router-dom";
+import { authulogin } from '../../redux/authuser/reducer';
+import { toast } from 'react-toastify';
+
+const LoginPage = () => {
+
+const dispatch=useDispatch()
+const navigate=useNavigate()
+const {error, isloading, user}=useSelector(state=>state.userdata)
+
     const hendlesupmit = (e) => {
+
         e.preventDefault()
         const userobj={
             email:e.target.email.value,
             password:e.target.password.value
         }
-        const loginhandl = async () => {
-            try {
-                await axios.post('http://localhost:5000/api/auth/login',userobj)
-                    .then(res=> console.log(res.data))
-            } catch (e) {
-                console.log(e)
-            }
-        }
-        loginhandl()
+       dispatch(authulogin(userobj))
         e.target.reset()
     }
+
+    useEffect(()=>{
+        if(user.token){
+            toast.success('ok')
+           navigate("/")
+        }
+      if(user.token==undefined && error!==null){
+        toast.error('error')
+      }
+    },[error,user])
+    
     return (
 
             <div className="auth-page">
@@ -31,7 +43,7 @@ const RegistryPage = () => {
                             <label htmlFor={'email'}>Email</label>
                         </div>
                         <div className="input-field col s12">
-                            <input id={'password'} type="password" name={'password'} autoComplete={true} className={'validate'}/>
+                            <input id={'password'} type="password" name={'password'} autoComplete="true" className={'validate'}/>
                             <label htmlFor={'password'}>Password</label>
                         </div>
                     </div>
@@ -45,4 +57,4 @@ const RegistryPage = () => {
     );
 };
 
-export default RegistryPage;
+export default LoginPage;

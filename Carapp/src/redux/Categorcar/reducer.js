@@ -8,7 +8,7 @@ export const getmarkapaging = createAsyncThunk(
         `https://cartestwebapp.herokuapp.com/category/marka?limit=5&page=${num}`
       );
       return res.data.data;
-    } catch (error) {
+    } catch (error) { 
       return rejectWithValue(error.message);
     }
   }

@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 import Navbar from "../navbar/Navbar";
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Layout = () => {
-    return (
-        <>
-         <Navbar/>
-            <div className="container">
-                <Outlet/>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <ToastContainer />
+      <Navbar />
+      <div className="container">
+        <Outlet />
+      </div>
+    </>
+  );
 };
 
 export default Layout;

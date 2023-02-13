@@ -16,9 +16,11 @@ export const registration = async (req, res) => {
             email,
             password: hash
         })
-        await user.save()
 
-        res.status(201).json({message: "Пользовател создан"})
+        await user.save()
+       
+        res.status(201).json({
+            message: "Пользовател создан"})
 
     } catch (e) {
         res.json({message: "Ошибка при создании пользователя"})
@@ -30,7 +32,7 @@ export const login = async (req, res) => {
         const user = await User.findOne({email})
 
         if (!user) {
-            return res.json({message: "Данный Email не существует"})
+            return res.status(401).json({message: "Данный Email не существует"})
         }
         const isPasswordCorrect = await bcrypt.compare(password, user.password);
         if (!isPasswordCorrect) {
@@ -39,7 +41,7 @@ export const login = async (req, res) => {
             })
         }
         const token = jwt.sign({
-                id: user._id
+                id: user.email
             },
             process.env.JWT_SECRET,
             {expiresIn: '30d'})
