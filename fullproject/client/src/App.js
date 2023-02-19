@@ -6,26 +6,22 @@ import LoginPage from "./pages/authpage/LoginPage";
 import HomePage from "./pages/homepage/HomePage";
 import "./App.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchtoken } from "./redux/authuser/reducer";
+import { loggetuser } from "./redux/authuser/registslice";
 
 function App() {
-  const disopatch = useDispatch();
+  const dispatch=useDispatch()
+const {isLogget}=useSelector(state=>state.userdata)
 
-  const { token } = useSelector((state) => state.userdata.user);
-
-  useEffect(() => {
-    if (token !== null) {
-      disopatch(fetchtoken(localStorage.getItem("TOKENUSER")));
-    }
-  }, [token]);
-
+useEffect(()=>{
+  localStorage.getItem('USERTOKEN') ? dispatch(loggetuser(true)):dispatch(loggetuser(false)) 
+},[localStorage.getItem('USERTOKEN')])
 
   return (
     <Routes>
       <Route path={"/"} element={<Layout />}>
         <Route path={"/registration"} element={<RegistryPage />} />
         <Route path={"/login"} element={<LoginPage />} />
-        <Route index element={token ? <HomePage />: <Navigate to="/login"/>} />
+        <Route index element={isLogget ? <HomePage />:<Navigate to='/login'/>} />
       </Route>
     </Routes>
   );

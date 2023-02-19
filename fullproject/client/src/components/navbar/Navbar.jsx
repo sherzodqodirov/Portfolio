@@ -2,28 +2,31 @@ import React from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { remuvtoken } from "../../redux/authuser/reducer";
+import { loggetuser} from "../../redux/authuser/registslice";
 import { toast } from "react-toastify";
+import {AiOutlineMenu,} from "react-icons/ai"
+import {GrReactjs} from "react-icons/gr";
 const Navbar = () => {
-  const { token } = useSelector((state) => state.userdata.user);
-  const dispatch=useDispatch()
-  const logout = () => {
-    localStorage.removeItem("TOKENUSER");
-    dispatch(remuvtoken())
-    toast.success("logout system")
-  };
+   const { isLogget } = useSelector((state) => state.userdata);
+   const dispatch=useDispatch()
+
+   const logout = () => {
+     localStorage.removeItem("USERTOKEN");
+     dispatch(loggetuser(false))
+     toast.success("logout system")
+   };
   return (
     <>
       <nav className={"light-blue darken-3"}>
         <div className="nav-wrapper container ">
           <Link to="/" className="brand-logo">
-            MERN todo-app
+            <span>Shef</span> <div className="navlogo"><GrReactjs size={24}/></div>
           </Link>
           <Link to="/" data-target="mobile-demo" className="sidenav-trigger">
-            <i className="material-icons">menu</i>
+            <i className="material-icons"><AiOutlineMenu/></i>
           </Link>
           <ul className="right hide-on-med-and-down">
-            {token ? (
+            {isLogget ? (
               <li onClick={logout}>
                 <Link to="/login" className={"logi"}>
                   Выйти

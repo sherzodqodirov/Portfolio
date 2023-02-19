@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "./authpage.scss";
-import { toast } from "react-toastify";
-import axios from "axios";
-import { authurl, BASEURL } from "../../utils/apiurl";
+import { postUser } from "../../redux/authuser/registactions";
 
 const RegistryPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { isloading, isLogget } = useSelector((state) => state.userdata);
 
   const hendlesupmit = (e) => {
     e.preventDefault();
@@ -14,19 +15,15 @@ const RegistryPage = () => {
       email: e.target.email.value,
       password: e.target.password.value,
     };
-
-    axios
-      .post(BASEURL + authurl.REGISTRATION, userobj)
-      .then((res) => {
-        toast.success(`${res.data.message}`);
-        navigate('/')
-      })
-      .catch((err) => {
-        toast.error(`${err.response.data.message}`);
-      });
-
+    dispatch(postUser(userobj));
     e.target.reset();
   };
+
+  useEffect(() => {
+    if (isLogget) {
+      navigate("/");
+    }
+  }, [isLogget]);
 
   return (
     <div className="auth-page">
@@ -57,7 +54,7 @@ const RegistryPage = () => {
         </div>
         <div className="row">
           <button className={"wawes-effect wawes-light btn  blue"}>
-            Регистрация
+            {isloading ? "Loading..." : "Регистрация"}
           </button>
           <Link to="/login" className={"btn-outline btn-regist"}>
             Уже есть аккаунта{" "}

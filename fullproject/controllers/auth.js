@@ -18,8 +18,15 @@ export const registration = async (req, res) => {
         })
 
         await user.save()
-       
+
+        const token = jwt.sign({
+            email: user.email
+        },
+        process.env.JWT_SECRET,
+        {expiresIn: '30d'})
+
         res.status(201).json({
+            token:token,
             message: "Пользовател создан"})
 
     } catch (e) {
@@ -41,7 +48,7 @@ export const login = async (req, res) => {
             })
         }
         const token = jwt.sign({
-                id: user.email
+                email: user.email
             },
             process.env.JWT_SECRET,
             {expiresIn: '30d'})

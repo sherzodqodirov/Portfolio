@@ -9,7 +9,7 @@ const Layout = () => {
     <>
       <ToastContainer />
       <Navbar />
-      <div className="container">
+      <div style={{marginTop:"50px"}} className="container">
         <Outlet />
       </div>
     </>

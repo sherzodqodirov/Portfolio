@@ -1,4 +1,20 @@
 .nav-wrapper{
+  .brand-logo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    span{
+      display: block;
+      font-size: 23px;
+    }
+    .navlogo {
+      animation: spin 4s linear 0s infinite;
+    }
+    @keyframes spin {
+      from {transform:rotate(0deg);}
+      to {transform:rotate(360deg);}
+  }
+  }
   .logi{
     font-size: 18px;
   }
