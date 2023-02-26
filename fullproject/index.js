@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import authRoute from './routes/auth.js'
+import productRoute from './routes/product.js'
 const app = express();
 dotenv.config()
 
@@ -13,8 +14,12 @@ const DB_NAME=process.env.DB_NAME;
 
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/',(req,res)=>res.status(200).json({ message: "Welcome to TODO Node.js application backend." }))
 
 app.use('/api/auth', authRoute);
+app.use('/api/product', productRoute);
 
 
 async function start() {

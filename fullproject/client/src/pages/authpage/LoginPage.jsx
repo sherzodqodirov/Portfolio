@@ -16,6 +16,7 @@ const LoginPage = () => {
       password: e.target.password.value,
     };
     dispatch(loginUser(userobj));
+    
     e.target.reset();
   };
 

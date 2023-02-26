@@ -65,7 +65,10 @@ export const login = async (req, res) => {
 }
 export const getme = async (req, res) => {
     try {
-
+       const usersall=await User.find()
+       res.status(200).json({
+        usersall,
+       })
     } catch (e) {
         console.log(e)
     }

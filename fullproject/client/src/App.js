@@ -20,7 +20,7 @@ useEffect(()=>{
     <Routes>
       <Route path={"/"} element={<Layout />}>
         <Route path={"/registration"} element={<RegistryPage />} />
-        <Route path={"/login"} element={<LoginPage />} />
+        <Route path={"/login"} element={isLogget ?<Navigate to='/' /> : <LoginPage /> } />
         <Route index element={isLogget ? <HomePage />:<Navigate to='/login'/>} />
       </Route>
     </Routes>

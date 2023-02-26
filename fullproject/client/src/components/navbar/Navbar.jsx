@@ -20,14 +20,14 @@ const Navbar = () => {
       <nav className={"light-blue darken-3"}>
         <div className="nav-wrapper container ">
           <Link to="/" className="brand-logo">
-            <span>Shef</span> <div className="navlogo"><GrReactjs size={24}/></div>
+            <span>Crudapp</span> <div className="navlogo"><GrReactjs size={24}/></div>
           </Link>
           <Link to="/" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons"><AiOutlineMenu/></i>
           </Link>
           <ul className="right hide-on-med-and-down">
             {isLogget ? (
-              <li onClick={logout}>
+              <li onClick={logout} >
                 <Link to="/login" className={"logi"}>
                   Выйти
                 </Link>
