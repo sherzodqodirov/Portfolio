@@ -19,13 +19,10 @@ const Navbar = () => {
     <>
       <nav className={"light-blue darken-3"}>
         <div className="nav-wrapper container ">
-          <Link to="/" className="brand-logo">
+          <Link to="/" className="brand-logo left">
             <span>Crudapp</span> <div className="navlogo"><GrReactjs size={24}/></div>
           </Link>
-          <Link to="/" data-target="mobile-demo" className="sidenav-trigger">
-            <i className="material-icons"><AiOutlineMenu/></i>
-          </Link>
-          <ul className="right hide-on-med-and-down">
+          <ul className="right">
             {isLogget ? (
               <li onClick={logout} >
                 <Link to="/login" className={"logi"}>
@@ -43,12 +40,12 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/*<ul className="sidenav" id="mobile-demo">*/}
-      {/*    <li><a href="">Sass</a></li>*/}
-      {/*    <li><a href="">Components</a></li>*/}
-      {/*    <li><a href="">Javascript</a></li>*/}
-      {/*    <li><a href="">Mobile</a></li>*/}
-      {/*</ul>*/}
+      <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
     </>
   );
 };

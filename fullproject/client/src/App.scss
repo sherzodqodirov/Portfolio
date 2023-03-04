@@ -1,0 +1,24 @@
+.itemproduct{
+    border-radius: 5px;
+    background-color: rgba(227, 210, 210, 0.267);
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        justify-content: space-between;
+    .btnbox{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .sell{
+            border-radius: 5px;
+            padding: 1px 5px;
+            color: #fff;
+            font-weight: 500;
+            background-color: rgb(69, 194, 69);
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(53, 145, 53);
+
+            }
+        }
+    }
+}
