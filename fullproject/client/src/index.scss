@@ -1,7 +1,30 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", "sans-serif";
   user-select: none;
+}
+body {
+  .detector {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgb(235, 232, 232);
+    .online {
+      color: green;
+    }
+    .offline {
+      color: red;
+    }
+  }
+
+ 
 }

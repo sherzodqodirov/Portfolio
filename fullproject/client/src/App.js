@@ -7,6 +7,7 @@ import HomePage from "./pages/homepage/HomePage";
 import "./App.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { loggetuser } from "./redux/authuser/registslice";
+import { fetchgetproduct } from "./redux/getallproduct/getallaction";
 
 function App() {
   const dispatch=useDispatch()
@@ -14,7 +15,11 @@ const {isLogget}=useSelector(state=>state.userdata)
 
 useEffect(()=>{
   localStorage.getItem('USERTOKEN') ? dispatch(loggetuser(true)):dispatch(loggetuser(false)) 
+
+
+
 },[localStorage.getItem('USERTOKEN')])
+
 
   return (
     <Routes>

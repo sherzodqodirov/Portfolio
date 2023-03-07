@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiFillDelete } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchgetproduct } from "../../redux/getallproduct/getallaction";
 const HomePage = () => {
-  const data = ["alma", "anor", "banan"];
+  
+  const { product, isloading, error } = useSelector(
+    (state) => state.productdata
+  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchgetproduct());
+  }, []);
 
   return (
-    
     <div>
       <div className="row">
         <form className="col s12">
@@ -24,18 +32,26 @@ const HomePage = () => {
             </div>
           </div>
         </form>
-        {data.map((item, key) => (
-          <div key={key} className="row">
-            <div className="col s12 m6 offset-m2 itemproduct">
-              <h6>{item}</h6>
-              <div className="btnbox">
-              <div className="sell">sell</div> 
-              <div style={{cursor:"pointer"}}> <AiFillDelete color="red" size={25}/> </div>
+        {isloading ? (
+          <div>Loading</div>
+        ) : error === null ? (
+          product.allproduct.map((item, key) => (
+            <div key={key} className="row">
+              <div className="col s12 m6 offset-m2 itemproduct">
+                <h6>{item.productname}</h6>
+                <div className="btnbox">
+                  <div className="sell">sell</div>
+                  <div style={{ cursor: "pointer" }}>
+                    {" "}
+                    <AiFillDelete color="red" size={25} />{" "}
+                  </div>
+                </div>
               </div>
-             
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <h6>{error}</h6>
+        )}
       </div>
     </div>
   );

@@ -1,27 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loadstop } from "../authuser/registslice";
 
-const productallSlice=createSlice({
-    name:"allproduct",
-    initialState:{
-     allproduct:[],
-     isloading:false,
-     error:null   
+const productallSlice = createSlice({
+  name: "allproduct",
+  initialState: {
+    product: [],
+    isloading: true,
+    error: null,
+  },
+  reducers: {
+    fetchallproduct: (state, actions) => {
+      state.isloading = false;
+      state.error = null;
+      state.product = actions.payload;
     },
-    reducers:{
-        loadstart:(state)=>{
-            state.isloading=true
-        },
-        loadstop:(state)=>{
-             state.isloading=false
-        },
-        fetchproduct:(state,actions)=>{
-            state.state=false
-            state.error=null
-            state.allproduct=actions.payload
-        },
-        fetcherrorallproduct:(state,actions)=>{
-            state.error=actions.payload
-        }
-    }
-})
+    fetcherrorallproduct: (state, actions) => {
+      state.isloading = false;
+      state.error = actions.payload;
+    },
+  },
+});
+
+const { actions, reducer } = productallSlice;
+
+export const {loadstop, fetcherrorallproduct, fetchallproduct }=actions;
+
+export default reducer;
