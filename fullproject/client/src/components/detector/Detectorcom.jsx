@@ -17,8 +17,15 @@ const Detectorcom = () => {
       window.removeEventListener("offline", handleStatusChange);
     };
   }, [isOnline]);
-  console.log(isOnline);
-  return <div className="detector">{isOnline ? <h6 className="online">online</h6> : <h6 className="offline">offline</h6>}</div>;
+  return (
+    <div className="detector">
+      {isOnline ? (
+        <h6 className="online">online</h6>
+      ) : (
+        <h6 className="offline">offline</h6>
+      )}
+    </div>
+  );
 };
 
 export default Detectorcom;
