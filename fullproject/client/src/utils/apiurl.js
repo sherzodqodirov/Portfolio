@@ -1,4 +1,4 @@
-export  const BASEURL="http://localhost:5000/";
+export  const BASEURL="http://localhost:8000/";
 
 export const authurl={
     REGISTRATION:`api/auth/registration`,
@@ -7,8 +7,8 @@ export const authurl={
 
 export const product={
    all:'api/product/productget',
-   one:'api/product/productgetone',
+   one:'api/product/productgetone/',
    create:'api/product/productcreate',
-   update:'api/product/productupdate',
-   delete:'api/product/productdelete'
+   update:'api/product/productupdate/',
+   delete:'api/product/productdelet/'
 }

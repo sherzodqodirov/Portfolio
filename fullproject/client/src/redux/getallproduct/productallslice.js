@@ -8,6 +8,9 @@ const productallSlice = createSlice({
     error: null,
   },
   reducers: {
+    fetchloadstart:(state)=>{
+     state.isloading=true
+    },
     fetchallproduct: (state, actions) => {
       state.isloading = false;
       state.error = null;
@@ -22,6 +25,6 @@ const productallSlice = createSlice({
 
 const { actions, reducer } = productallSlice;
 
-export const {loadstop, fetcherrorallproduct, fetchallproduct }=actions;
+export const {loadstop, fetcherrorallproduct, fetchallproduct,fetchloadstart }=actions;
 
 export default reducer;

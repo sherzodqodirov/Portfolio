@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import Cardproduct from "../../components/Cardproduct";
+import { createproduct } from "../../redux/getallproduct/createproduct";
 import { fetchgetproduct } from "../../redux/getallproduct/getallaction";
 const HomePage = () => {
   
@@ -12,14 +13,25 @@ const HomePage = () => {
     dispatch(fetchgetproduct());
   }, []);
 
+  const handlesub=(e)=>{
+       e.preventDefault();
+       const productobj={
+        productname:e.target.product.value,
+        status:false
+      }
+       dispatch(createproduct(productobj))
+       e.target.reset();
+  }
+
+  
   return (
     <div>
       <div className="row">
-        <form className="col s12">
+        <form onSubmit={handlesub} className="col s12">
           <div className="row">
             <div className="input-field  col m6 s8 offset-m2  ">
-              <input id="last_name" type="text" className="validate" />
-              <label htmlFor="last_name">Product name</label>
+              <input required id="product" type="text" className="validate" />
+              <label htmlFor="product">Product name</label>
             </div>
             <div style={{ marginTop: "25px" }} className="col m2 s2">
               <button
@@ -33,22 +45,11 @@ const HomePage = () => {
           </div>
         </form>
         {isloading ? (
-          <div>Loading</div>
+           <div className="progress">
+           <div className="indeterminate"></div>
+       </div>
         ) : error === null ? (
-          product.allproduct.map((item, key) => (
-            <div key={key} className="row">
-              <div className="col s12 m6 offset-m2 itemproduct">
-                <h6>{item.productname}</h6>
-                <div className="btnbox">
-                  <div className="sell">sell</div>
-                  <div style={{ cursor: "pointer" }}>
-                    {" "}
-                    <AiFillDelete color="red" size={25} />{" "}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))
+          product?.allproduct?.map((item, key) => <Cardproduct  key={key} data={item}/>)
         ) : (
           <h6>{error}</h6>
         )}

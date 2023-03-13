@@ -3,7 +3,13 @@ import Product from "../models/Product.js";
 export const productpost= async(req,res)=>{
     try {
         const {productname ,status}=req.body
-        
+       
+         
+         if (productname.trim()==='') { 
+          return res.status(404).json({
+            message: "Пусто"
+        })
+         }
        const product= new Product({
         productname,
         status
@@ -11,7 +17,7 @@ export const productpost= async(req,res)=>{
        await product.save()
      
        res.status(201).json({
-        message:" продукта создан"
+        message:"продукта создан"
        })
       
     } catch (error) {

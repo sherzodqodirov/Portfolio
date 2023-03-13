@@ -15,10 +15,17 @@
             font-weight: 500;
             background-color: rgb(69, 194, 69);
             cursor: pointer;
+            &.none{
+                display: none;
+            }
             &:hover{
                 background-color: rgb(53, 145, 53);
 
             }
+            
         }
+    }
+    &.bgsell{
+     background-color: rgb(125, 236, 125) !important;           
     }
 }

@@ -3,9 +3,11 @@ import { BASEURL, product } from "../../utils/apiurl";
 import {
   fetchallproduct,
   fetcherrorallproduct,
+  fetchloadstart,
 } from "./productallslice.js";
 
 export const fetchgetproduct = () => (dispatch) => {
+  dispatch(fetchloadstart())
   axios
     .get(BASEURL + product.all)
     .then((res) => 
