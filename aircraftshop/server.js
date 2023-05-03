@@ -1,26 +1,41 @@
-const express=require("express")
-const mongoose=require("mongoose")
-require('dotenv').config
-const app=express()
-const port=process.env.PORT||8000;
+import express from 'express';
+import mongoose from 'mongoose'
+import cors from 'cors'
+import dotenv from 'dotenv'
+import planesRoute from "./routes/planes.js"
+import path from 'path';
+import {fileURLToPath} from 'url';
 
-// application/json
-app.use(express.json);
+const app = express();
+dotenv.config()
+const __filename = fileURLToPath(import.meta.url);
 
-//application/x-www-from-urlencoded
-app.use(express.urlencoded({extended:true}))
+const __dirname = path.dirname(__filename);
 
-app.use("/static",express.static(__dirname+"assets"))
-app.get('/',(req,res)=>{
-    res.send("my app")
-})
+const PORT = process.env.PORT || 5000;
 
-mongoose.connect("mongodb+srv://admin:admin1@cluster0.ib1moir.mongodb.net/test")
-.then(()=>{
-    app.listen(port,()=>{
-        console.log(` server run ${port}`);
-    })
-})
-.catch(()=>{
-    console.log("server error");
-})
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({extended: true}));
+
+app.use('/static', express.static(__dirname + "/assets"))
+
+app.get('/', (req, res) => res.status(200).json({message: " Backend Node.js "}))
+
+app.use('/api/planes', planesRoute)
+
+
+async function start() {
+    try {
+        await mongoose.connect("mongodb://localhost:27017")
+
+        app.listen(PORT, () => {
+            console.log(`server start ${PORT}`)
+        })
+
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+start()
