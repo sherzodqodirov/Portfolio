@@ -1,9 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
-import photoReduser from "./photoSlice/reducer"
+import { photoApi } from "./api/api";
+import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 export const store = configureStore({
   reducer:{
-    gallery: photoReduser,
-  }
-  
+    [photoApi.reducerPath]:photoApi.reducer
+  },
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware().concat(photoApi.middleware),
 })
+setupListeners(store.dispatch)
