@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import AboutPage from "./pages/AboutPage";
-import HomePage from "./pages/HomePage";
 import {BiNews} from "react-icons/bi";
+import {lazy} from "react";
 
+const HomePage =lazy(()=>import('./pages/HomePage'))
+const ProductPage =lazy(()=>import('./pages/ProductPage'))
+const AboutPage =lazy(()=>import('./pages/AboutPage'))
 
 
 
@@ -10,6 +12,10 @@ export const AllPages = [
   {
     path: "/",
     component: <HomePage />,
+  },
+ {
+    path: "products/:id",
+    component: <ProductPage/>,
   },
   {
     path: "about",
