@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from "mongoose";
 import cors from 'cors';
 import dotenv from 'dotenv';
+import AuthRoute from "./routes/AuthRoute.js";
 
 const app = express();
 dotenv.config()
@@ -13,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('/', (req, res) => res.status(200).json({message: "MERN Chat server"}))
 
 
-
+app.use('/auth',AuthRoute)
 
 
 
