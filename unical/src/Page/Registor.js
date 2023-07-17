@@ -8,35 +8,24 @@ const Registor = () => {
 
     const handleSubmit = (even) => {
         even.preventDefault()
-        const Phonename = {
-            Phone: even.target.inputPhone.value,
-            Fullname: even.target.inputFullname.value,
+        const data = {
+            firstname: even.target.firstname.value,
+            lastname: even.target.lastname.value,
+            email: even.target.email.value,
+            password: even.target.password.value,
+            profilePicture: even.target.file.files[0],
         }
-        even.target.reset();
+        const formdata = new FormData()
+        for (let key in data) {
+            formdata.append(`${key}`, data[key])
+        }
 
 
 
-        axios({
-            method: 'post',
-            url: "https://app.numberstats.com/api/register",
-
-            body: {
-                first_name: "Sherzod",
-                last_name: "Qodirov",
-                email: "sherzodqadirov01@gmail.com",
-                password: "sherzod6134"
-            },
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            }
-        })
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error.message);
-            });
+        axios
+            .post('http://localhost:5000/auth/register', formdata)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err.response.data));
 
     }
 
@@ -51,13 +40,28 @@ const Registor = () => {
 
                 <form className="row g-3" onSubmit={handleSubmit}>
                     <div className="col-12">
-                        <label htmlFor="inputPhone" className="form-label">Phone number</label>
-                        <input type="number" className="form-control" id="inputPhone" placeholder="Phone number"/>
+                        <label htmlFor="firstname" className="form-label">First name</label>
+                        <input type="text" className="form-control" id="firstname" placeholder="First name"/>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="inputFullname" className="form-label">Full name</label>
-                        <input type="text" className="form-control" id="inputFullname"
-                               placeholder="Full name"/>
+                        <label htmlFor="lastname" className="form-label">Last name</label>
+                        <input type="text" className="form-control" id="lastname"
+                               placeholder="Last name"/>
+                    </div>
+                     <div className="col-12">
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="email" className="form-control" id="email"
+                               placeholder="email"/>
+                    </div>
+                     <div className="col-12">
+                        <label htmlFor="inputFullname" className="form-label">Password</label>
+                        <input type="password" className="form-control" id="password"
+                               placeholder="password"/>
+                    </div>
+                     <div className="col-12">
+                        <label htmlFor="file" className="form-label">Avatar </label>
+                        <input type="file" className="form-control" id="file"
+                               />
                     </div>
                     <div className="col-12 btnRegistor">
                         <button type="submit" className="w-100 btn btn-primary">Registor</button>

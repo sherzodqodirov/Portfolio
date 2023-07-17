@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -6,16 +6,23 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import {Link} from "react-router-dom";
-import {styled} from '@mui/material/styles';
+import { Link } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import axios from 'axios';
 
 const Register = () => {
+    const [file, setFile] = useState('');
+    const [btnDis, setBtnDis] = useState(false);
+
+    useEffect(() => {
+        setBtnDis(file === '');
+    }, [file]);
 
     function Copyright(props) {
         return (
             <Typography variant="body2" color="#FFF" align="center" {...props}>
                 {'Sherzod Qodirov © '}
-                <Link color="inherit" target="_blank" to="https://sherzodqodirov.github.io/myportfoliosayt">
+                <Link color="inherit" target="_blank" href="https://sherzodqodirov.github.io/myportfoliosayt">
                     Website
                 </Link>
                 {new Date().getFullYear()}
@@ -23,19 +30,30 @@ const Register = () => {
         );
     }
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        const body = {
-            name: data.get('name'),
-            email: data.get('email'),
-            password: data.get('password'),
+
+        const data = {
+            firstname: event.target.firstname.value,
+            lastname: event.target.lastname.value,
+            email: event.target.email.value,
+            password: event.target.password.value,
+            profilePicture: event.target.file.files[0],
         };
-        console.log(body)
+        const formData = new FormData()
+        for (let key in data) {
+            formData.append(`${key}`, data[key])
+        }
+
+        axios
+            .post('http://localhost:5000/auth/register', formData)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err.response.data));
+
+
     };
 
-    const WhiteBorderTextField = styled(TextField)(({theme}) => ({
+    const WhiteBorderTextField = styled(TextField)(({ theme }) => ({
         '& label.Mui-focused': {
             color: '#FFFFFF',
         },
@@ -43,13 +61,12 @@ const Register = () => {
             borderBottomColor: 'silver',
         },
         '& .MuiOutlinedInput-root': {
-            color: "#FFF",
+            color: '#FFF',
             backgroundColor: '#6374a8',
             outline: '#FFFFFF',
             '& fieldset': {
                 borderColor: 'silver',
-                color: "#ffffFF",
-
+                color: '#FFFFFF',
             },
             '&:hover fieldset': {
                 borderColor: 'silver',
@@ -61,60 +78,58 @@ const Register = () => {
     }));
 
     return (
-        <Box sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: "100%",
-            height: "100vh",
-            backgroundColor: "#1f2936",
-        }}>
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100vh',
+                backgroundColor: '#1f2936',
+            }}
+        >
             <Box
                 sx={{
-                    width: "380px",
+                    width: '380px',
                     display: 'flex',
                     justifyContent: 'center',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: "100vh",
+                    height: '100vh',
                 }}
             >
-                <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
-                    <LockOutlinedIcon/>
+                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                    <LockOutlinedIcon />
                 </Avatar>
-                <Typography component="h1" variant="h5" color={"#fff"}>
+                <Typography component="h1" variant="h5" color="#fff">
                     Sign Up
                 </Typography>
-                <Box component="form" onSubmit={handleSubmit} sx={{mt: 1}}>
-
+                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
                     <WhiteBorderTextField
                         InputLabelProps={{
-                            style: {color: '#FFFFFF'},
+                            style: { color: '#FFFFFF' },
                         }}
                         margin="normal"
                         required
                         fullWidth
-                        id="name"
+                        id="firstname"
                         label="First name"
-                        name="name"
-                        autoComplete="name"
+                        name="firstname"
                     />
                     <WhiteBorderTextField
                         InputLabelProps={{
-                            style: {color: '#FFFFFF'},
+                            style: { color: '#FFFFFF' },
                         }}
                         margin="normal"
                         required
                         fullWidth
-                        id="name"
+                        id="lastname"
                         label="Last name"
-                        name="name"
-                        autoComplete="name"
+                        name="lastname"
                     />
-
                     <WhiteBorderTextField
                         InputLabelProps={{
-                            style: {color: '#FFFFFF'},
+                            style: { color: '#FFFFFF' },
                         }}
                         margin="normal"
                         required
@@ -124,10 +139,9 @@ const Register = () => {
                         name="email"
                         autoComplete="email"
                     />
-
                     <WhiteBorderTextField
                         InputLabelProps={{
-                            style: {color: '#FFFFFF'},
+                            style: { color: '#FFFFFF' },
                         }}
                         margin="normal"
                         required
@@ -138,23 +152,22 @@ const Register = () => {
                         id="password"
                         autoComplete="current-password"
                     />
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{mt: 3, mb: 2}}
-                    >
+                    <Button variant="contained" component="label" sx={{ mt: 1 }}>
+                        {file === '' ? 'Upload avatar' : file.name}
+                        <input onChange={(e) => setFile(e.target.files[0])} type="file" name="avatar" id="file" hidden accept=".jpg,.png" />
+                    </Button>
+                    <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={btnDis}>
                         Sign Up
                     </Button>
                     <Grid container>
                         <Grid item>
                             <Link to="/login" variant="body2">
-                                {"Do have an account? Sign In"}
+                                {'Do have an account? Sign In'}
                             </Link>
                         </Grid>
                     </Grid>
                 </Box>
-                <Copyright sx={{mt: 8, mb: 4}}/>
+                <Copyright sx={{ mt: 8, mb: 4 }} />
             </Box>
         </Box>
     );

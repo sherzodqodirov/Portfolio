@@ -8,6 +8,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import {Link, useNavigate} from "react-router-dom"
 import {styled} from '@mui/material/styles';
+import axios from "axios";
 
 const Login = () => {
     const navigate = useNavigate()
@@ -31,7 +32,10 @@ const Login = () => {
             email: data.get('email'),
             password: data.get('password'),
         };
-        navigate("/chat")
+        axios.post("http://localhost:5000/auth/login", body)
+            .then((response) =>console.log(response))
+            .catch(error=>console.log(error))
+        //navigate("/chat")
         console.log(body)
     };
 
