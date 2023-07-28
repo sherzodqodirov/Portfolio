@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {Suspense, useEffect} from 'react';
 import styled from "styled-components";
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import NavBar from "./NavBar";
 import {useSelector} from "react-redux";
 import NavHeader from "./NavHeader";
+import {userSlice} from "../redux/slice/userSlice";
+import Spinner from "./Spinner";
 
 const ChatLayout = () => {
 
     const {btn} = useSelector(state => state.btnState)
+    const {status} = useSelector(state => state.userSlice)
+    const navigate=useNavigate()
+    useEffect(() => {
+        if (status == null){
+            navigate("/login")
+        }
+    }, [status]);
+
 
     return (
         <>
@@ -19,7 +29,9 @@ const ChatLayout = () => {
                 <RightBox>
                     <NavHeader/>
                     <AreaChat>
-                        <Outlet/>
+                        <Suspense fallback={<Spinner/>} >
+                            <Outlet/>
+                        </Suspense>
                     </AreaChat>
                 </RightBox>
             </CoreBox>

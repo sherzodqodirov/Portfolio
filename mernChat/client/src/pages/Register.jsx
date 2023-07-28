@@ -6,13 +6,28 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import axios from 'axios';
+import {AUTH_URL, BASE_URL} from "../utils/apiUrl";
+import {registerPost} from "../services/servicesData";
+import {useDispatch, useSelector} from "react-redux";
+import {registerUserAction} from "../redux/actions/userActions";
+import {userSlice} from "../redux/slice/userSlice";
 
 const Register = () => {
     const [file, setFile] = useState('');
     const [btnDis, setBtnDis] = useState(false);
+    const dispatch=useDispatch()
+    const {status}=useSelector(state => state.userSlice)
+    const navigate=useNavigate()
+
+    useEffect(() => {
+        if(status=="success"){
+            navigate("/chat")
+        }
+
+    }, [status]);
 
     useEffect(() => {
         setBtnDis(file === '');
@@ -45,11 +60,7 @@ const Register = () => {
             formData.append(`${key}`, data[key])
         }
 
-        axios
-            .post('http://localhost:5000/auth/register', formData)
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err.response.data));
-
+        dispatch(registerUserAction(formData))
 
     };
 

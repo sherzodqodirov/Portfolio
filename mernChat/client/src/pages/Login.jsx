@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -8,10 +8,25 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import {Link, useNavigate} from "react-router-dom"
 import {styled} from '@mui/material/styles';
-import axios from "axios";
+import {loginPost} from "../services/servicesData";
+import jwt from "jwt-decode"
+import {useDispatch, useSelector} from "react-redux";
+import {loginUserAction} from "../redux/actions/userActions";
+import {addUserData, userSlice} from "../redux/slice/userSlice";
 
 const Login = () => {
     const navigate = useNavigate()
+    const dispatch=useDispatch()
+    const {status}=useSelector(state => state.userSlice)
+
+    useEffect(() => {
+        if(status=="success"){
+            navigate("/chat")
+        }
+
+    }, [status]);
+
+
 
     function Copyright(props) {
         return (
@@ -32,11 +47,9 @@ const Login = () => {
             email: data.get('email'),
             password: data.get('password'),
         };
-        axios.post("http://localhost:5000/auth/login", body)
-            .then((response) =>console.log(response))
-            .catch(error=>console.log(error))
-        //navigate("/chat")
-        console.log(body)
+
+        dispatch(loginUserAction(body))
+
     };
 
     const WhiteBorderTextField = styled(TextField)(({theme}) => ({

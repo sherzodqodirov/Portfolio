@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { loginUser, registerUser } from '../controllers/AuthControllers.js';
+import {allUsers, loginUser, oneUser, registerUser} from '../controllers/AuthControllers.js';
 import multer from 'multer';
 import path from 'path';
 
@@ -16,5 +16,6 @@ const upload = multer({ storage }).single('profilePicture');
 
 router.post('/register', upload, registerUser);
 router.post('/login', loginUser);
-
+router.get('/users/:id',allUsers)
+router.get('/user/:id',oneUser)
 export default router;

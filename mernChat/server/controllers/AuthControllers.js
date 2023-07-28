@@ -97,3 +97,37 @@ export const loginUser = async (req, res) => {
         return res.status(500).json({message: 'Error logging in'});
     }
 };
+
+export const allUsers=async (req, res) => {
+    try {
+        const {id}=req.params
+
+        const userData=await UserModel.find({ _id: {$ne: id} } )
+
+        if (!userData){
+            return res.status(404).json({message: 'Users not found'});
+        }
+
+        return res.status(200).json(userData);
+    }catch (error) {
+        console.log(error);
+        return res.status(500).json({message: 'Error users '});
+    }
+}
+export const oneUser=async (req, res) => {
+    try {
+        const {id}=req.params
+
+        const userData=await UserModel.findOne({ _id:  id } )
+
+        if (!userData){
+            return res.status(404).json({message: 'Users not found'});
+        }
+
+        return res.status(200).json(userData);
+    }catch (error) {
+        console.log(error);
+        return res.status(500).json({message: 'Error users '});
+    }
+}
+

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components";
 import Avatar from '@mui/material/Avatar';
 import {Link, NavLink} from "react-router-dom";
@@ -6,25 +6,24 @@ import {FaTelegram} from "react-icons/fa";
 import Box from "@mui/material/Box";
 import {RiMenuFill} from "react-icons/ri";
 import {useDispatch, useSelector} from "react-redux";
-import {btnClick} from "../redux/btnSlice";
+import {btnClick} from "../redux/slice/btnSlice";
 import {IconButton} from "@mui/material";
+import axios from "axios";
+import {AUTH_URL, BASE_URL} from "../utils/apiUrl";
+import {getAllUserData} from "../redux/actions/allUserActions";
+import SkeletonUsers from "./SkeletonUsers";
 
 const NavBar = () => {
     const {btn} = useSelector(state => state.btnState)
     const dispatch = useDispatch()
+    const {_id}=useSelector(state => state.userSlice.userInfo)
+    const {allUserInfo,status} = useSelector(state => state.allUserSlice)
 
-    const userdata = [
-        {
-            id: '5456',
-            name: 'Fayzullo Bekchanov',
-            avatar: '/broken-image.jpg',
-        },
-        {
-            id: '54fg56',
-            name: 'Sherzod Qodirov',
-            avatar: '/broken-image.jpg',
-        },
-    ]
+    useEffect(() => {
+       dispatch(getAllUserData(_id))
+    }, []);
+
+
 
     const handleBtn = () => {
         btn === "open" && dispatch(btnClick("close"))
@@ -37,7 +36,7 @@ const NavBar = () => {
                 <NavBrandBox>
                     {btn === "open" && <Link to="/chat">
                         <Box className="brandbox" display={"flex"} alignItems="center" gap="15px">
-                            <FaTelegram size={35}/> <h1>TeleShef</h1>
+                            <FaTelegram size={35}/> <h1>ShefGram</h1>
                         </Box>
                     </Link>}
                     <IconButton  onClick={handleBtn}aria-label="menu-button" size="large" sx={{cursor: "pointer", color: "#607484"}}>
@@ -46,18 +45,21 @@ const NavBar = () => {
                 </NavBrandBox>
             </NavTop>
             <UserCoreBox>
-                {userdata && userdata.map((item, key) => (
-                    <NavLink to={"user/" + item.id} key={key} style={{textDecoration: "none"}}>
+                {
+                 status === null ||   status === "loading" ? Array.from({length:5}).map((item,index)=>(
+                     <SkeletonUsers key={index}/>
+                     )) :
+                    allUserInfo && allUserInfo.map((item, key) => (
+                    <NavLink to={"user/" + item?._id} key={key} style={{textDecoration: "none"}}>
                         <UserBox>
-                            <Avatar src={item.avatar}/>
+                            <Avatar src={item.profilePicture}/>
                             {btn == "open" && <UserTitile>
-                                {item.name}
+                                {item.firstname+" "+item.lastname}
                             </UserTitile>}
 
                         </UserBox>
                     </NavLink>
                 ))}
-
             </UserCoreBox>
         </Container>
     );
@@ -86,6 +88,8 @@ const UserTitile = styled.div`
   color: #FFFFFF;
 `
 const UserCoreBox = styled.div`
+  height: 85vh;
+  overflow-y: auto;
   a{
     display: block;
     width: 100%;
