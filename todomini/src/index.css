@@ -1,0 +1,51 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+    --info: #0dcaf0;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #212529;
+}
+
+.inputBox {
+    width: 250px;
+    margin: 20px auto;
+}
+
+.listData {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.liStyle {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnDelete {
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background-color: var(--danger);
+    color: var(--light);
+}

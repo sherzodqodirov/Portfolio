@@ -1,8 +1,6 @@
 
 C
 client/src/index.js,7\6\76cbb38a5cef42611c7af13985f39248682f4aa1
-C
-server/package.json,5\4\54e8f14248f674b305c14bde70fadbe1da1edb31
 W
 'client/src/redux/actions/userActions.js,b\0\b0fafec2ea3901a14bd5614e7e85c9fc707e1376
 Z
@@ -31,10 +29,6 @@ P
  client/src/pages/RouterPages.jsx,0\2\0208a48c3afa74d8928e87414cc6186cdd3614f0
 W
 'client/src/components/SkeletonUsers.jsx,9\f\9f654deb1ece83507c8fd2ef9e68f0f5440a3e2c
-T
-$client/src/components/ChatLayout.jsx,0\a\0aa5d156f52ca5304e2dca0e4497ec2412e03329
-?
-server/index.js,e\1\e1a504bc36c43a5b06e18911fe39381356468d7f
 J
 server/routes/AuthRoute.js,1\f\1f4c20768a276cba71856f6863e3caab377d4190
 P
@@ -43,12 +37,6 @@ U
 %server/controllers/AuthControllers.js,e\a\eae0db4f878012e534244156cbf7ab6e5e95005f
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
-J
-server/routes/ChatRoute.js,5\1\51a32c530a3725d768919d7dbbbc4c7a2532dec9
-Y
-)client/src/components/FileUploadModal.jsx,f\7\f78ba49d97cd72e557e0e46ed49dee8484993369
-T
-$server/controllers/ChatController.js,3\4\343b9945656a30146ca4899d559c27c4dccb8c75
 J
 client/src/utils/apiUrl.js,9\b\9beac89f550c20f831c9ff24a9025e5a5120901d
 R
@@ -73,5 +61,17 @@ S
 #client/src/services/servicesData.js,4\e\4e4932117dbd3b4e36d092b57f1f2e43cda72f78
 M
 client/src/pages/Register.jsx,c\e\ce3bd2e8d0c23a381ed95aff0bfc2ca7f4240b59
+T
+$client/src/components/ChatLayout.jsx,0\a\0aa5d156f52ca5304e2dca0e4497ec2412e03329
+?
+server/index.js,e\1\e1a504bc36c43a5b06e18911fe39381356468d7f
+C
+server/package.json,5\4\54e8f14248f674b305c14bde70fadbe1da1edb31
+Y
+)client/src/components/FileUploadModal.jsx,f\7\f78ba49d97cd72e557e0e46ed49dee8484993369
 N
 client/src/pages/UsersChat.jsx,9\f\9f0d5a98a850ddc0cf735bb01520de7e3bed4340
+J
+server/routes/ChatRoute.js,5\1\51a32c530a3725d768919d7dbbbc4c7a2532dec9
+T
+$server/controllers/ChatController.js,3\4\343b9945656a30146ca4899d559c27c4dccb8c75

@@ -1,28 +1,23 @@
-import Link from "next/link";
+export default function Blog({ posts }) {
 
-async function getData() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  
-  if (!response.ok) throw new Error("Error fetching")
+    return (
+        <ul>
+            {posts?.map((post,key) => (
+                <li key={key}>{post?.title}</li>
+            ))}
+        </ul>
+    )
+}
+export async function getStaticProps() {
 
-  return response.json();
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const posts = await res.json()
+    console.log(posts,"getStaticPropssssss")
+    return {
+        props: {
+            posts,
+        },
+    }
 }
 
-const Blog = async () => {
-  const posts = await getData();
 
-  return (
-    <>
-      <h3>Blog page</h3>
-      <ul>
-        {posts.map((item) => (
-          <li key={item.id}>
-            <Link href={`/blog/${item.id}`}> {item.title} </Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-};
-
-export default Blog;
