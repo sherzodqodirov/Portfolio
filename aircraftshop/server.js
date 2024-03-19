@@ -27,7 +27,10 @@ app.use('/api/planes', planesRoute)
 
 async function start() {
     try {
-        await mongoose.connect("mongodb://localhost:27017")
+        await mongoose.connect("mongodb://localhost:27017",{
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        })
 
         app.listen(PORT, () => {
             console.log(`server start ${PORT}`)
